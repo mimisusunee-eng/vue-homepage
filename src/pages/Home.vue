@@ -1,19 +1,15 @@
 <template>
   <div>
-    <Hero /> 
+    <!-- Hero -->
+    <Hero />
 
-    <section class="section"> 
-      <h2>{{ $t('newProjects') }}</h2>
+    <!-- New projects -->
+    <PropertySection :title="$t('newProjects')" />
 
-      <div class="grid">
-        <PropertyCard
-          v-for="item in projects"
-          :key="item.id"
-          v-bind="item"
-        />
-      </div>
-    </section>
+    <!-- Handpicked properties -->
+    <PropertySection :title="$t('handpickedProperties')" />
 
+    <!-- Help center -->
     <section class="help">
       <h2>{{ $t('helpCenter') }}</h2>
       <div class="help-box">
@@ -26,52 +22,14 @@
 
 <script setup>
 import Hero from '../components/Hero.vue'
-import PropertyCard from '../components/PropertyCard.vue'
-
-const projects = [
-  {
-    id: 1,
-    image: '/house.png',
-    title: 'Lumpini Jomtien',
-    location: 'Jomtiensaineung Rd, Muang',
-    price: '฿87554'
-  },
-  {
-    id: 2,
-    image: '/house.png',
-    title: 'Lumpini Jomtien',
-    location: 'Jomtiensaineung Rd, Muang',
-    price: '฿87554'
-  },
-   {
-    id: 3,
-    image: '/house.png',
-    title: 'Lumpini Jomtien',
-    location: 'Jomtiensaineung Rd, Muang',
-    price: '฿87554'
-  },
-   {
-    id: 4,
-    image: '/house.png',
-    title: 'Lumpini Jomtien',
-    location: 'Jomtiensaineung Rd, Muang',
-    price: '฿87554'
-  },
-]
+import PropertySection from '../components/PropertySection.vue'
 </script>
 
 <style scoped>
-.section {
-  padding: 40px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-}
 .help {
   padding: 40px;
 }
+
 .help-box {
   display: flex;
   gap: 20px;

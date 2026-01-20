@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img src="/house.jpg" />
+    <img src="/house.png" />
     <div class="info">
       <h3>Luxury Villa</h3>
       <p>Bangkok, Thailand</p>

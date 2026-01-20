@@ -3,9 +3,7 @@
     <h2>Recommended Properties</h2>
 
     <div class="grid">
-      <PropertyCard />
-      <PropertyCard />
-      <PropertyCard />
+      <PropertyCard v-for="n in 8" :key="n" />
     </div>
   </section>
 </template>
@@ -16,7 +14,10 @@ import PropertyCard from './PropertyCard.vue'
 
 <style scoped>
 .section {
-  padding: 60px;
+  padding: 60px 80px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 h2 {
@@ -25,7 +26,8 @@ h2 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+
 </style>

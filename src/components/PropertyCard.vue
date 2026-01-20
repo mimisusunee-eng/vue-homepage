@@ -1,14 +1,26 @@
 <template>
   <div class="card">
-    <img src="https://via.placeholder.com/300" />
-    <h3>Lumpini Jomtien</h3>
-    <p>฿87554</p>
+    <img :src="image" :alt="title" />
+    <h3>{{ title }}</h3>
+    <p>{{ location }}</p>
+    <p>{{ price }}</p>
   </div>
 </template>
 
-<style>
+<script setup>
+defineProps({
+  image: String,
+  title: String,
+  location: String,
+  price: String
+})
+</script>
+
+<style scoped>
 .card {
   border: 1px solid #ddd;
   padding: 10px;
+  border-radius: 5px;
 }
 </style>
+

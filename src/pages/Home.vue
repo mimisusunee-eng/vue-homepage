@@ -42,21 +42,21 @@ const projects = [
     title: 'Lumpini Jomtien',
     location: 'Pattaya',
     price: '฿875,554'
-  }
+  },
    {
     id: 3,
     image: '/house.jpg',
     title: 'Cha Xiao mimi',
     location: 'Mae Sai',
     price: '฿999,999,999,999,999,999,999,999'
-  }
+  },
    {
     id: 4,
     image: '/house.jpg',
     title: 'ชาแมวเดก',
     location: 'เดกแม่สาย',
     price: '฿999,999,999,999,999,999,999,999'
-  }
+  },
 ]
 </script>
 

@@ -1,6 +1,9 @@
 <template>
   <section class="section">
-    <h2>Recommended Properties</h2>
+    <div class="section-header">
+      <h2>{{ title }}</h2>
+      <span class="more">more →</span>
+    </div>
 
     <div class="grid">
       <PropertyCard v-for="n in 8" :key="n" />
@@ -10,6 +13,10 @@
 
 <script setup>
 import PropertyCard from './PropertyCard.vue'
+
+defineProps({
+  title: String
+})
 </script>
 
 <style scoped>
@@ -20,8 +27,17 @@ import PropertyCard from './PropertyCard.vue'
   margin: 0 auto;
 }
 
-h2 {
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
+}
+
+.more {
+  font-size: 14px;
+  color: #3b82f6;
+  cursor: pointer;
 }
 
 .grid {
@@ -29,5 +45,4 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
 </style>

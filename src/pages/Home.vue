@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Hero />
+    <Hero /> 
 
-    <section class="section">
+    <section class="section"> 
       <h2>{{ $t('newProjects') }}</h2>
 
       <div class="grid">
@@ -31,31 +31,31 @@ import PropertyCard from '../components/PropertyCard.vue'
 const projects = [
   {
     id: 1,
-    image: '/house.jpg',
+    image: '/house.png',
     title: 'Lumpini Jomtien',
-    location: 'Pattaya',
-    price: '฿875,554'
+    location: 'Jomtiensaineung Rd, Muang',
+    price: '฿87554'
   },
   {
     id: 2,
-    image: '/house.jpg',
+    image: '/house.png',
     title: 'Lumpini Jomtien',
-    location: 'Pattaya',
-    price: '฿875,554'
+    location: 'Jomtiensaineung Rd, Muang',
+    price: '฿87554'
   },
    {
     id: 3,
-    image: '/house.jpg',
-    title: 'Cha Xiao mimi',
-    location: 'Mae Sai',
-    price: '฿999,999,999,999,999,999,999,999'
+    image: '/house.png',
+    title: 'Lumpini Jomtien',
+    location: 'Jomtiensaineung Rd, Muang',
+    price: '฿87554'
   },
    {
     id: 4,
-    image: '/house.jpg',
-    title: 'ชาแมวเดก',
-    location: 'เดกแม่สาย',
-    price: '฿999,999,999,999,999,999,999,999'
+    image: '/house.png',
+    title: 'Lumpini Jomtien',
+    location: 'Jomtiensaineung Rd, Muang',
+    price: '฿87554'
   },
 ]
 </script>

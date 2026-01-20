@@ -1,30 +1,35 @@
 <template>
   <div class="card">
-    <img :src="image" alt="house.png" />
+    <div class="badge">Condo</div>
 
-    <div class="info">
-      <h3>{{ title }}</h3>
-      <p>{{ location }}</p>
-      <span>{{ price }}</span>
+    <img src="/house.png" />
+
+    <div class="body">
+      <h3>Lumpini Jomtien</h3>
+      <p class="location">Jomtien 2nd Road, Muang</p>
+
+      <div class="info">
+        <span>🛏 4</span>
+        <span>🛁 2</span>
+        <span>📐 457㎡</span>
+        <span>📍 Pattaya</span>
+      </div>
+
+      <p class="price">฿87554</p>
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
-  image: String,
-  title: String,
-  location: String,
-  price: String
-})
 </script>
 
 <style scoped>
 .card {
+  background: #fff; /* พื้นหลัง */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: white;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(253, 0, 0, 0.08);
 }
 
 .card img {
@@ -33,23 +38,38 @@ defineProps({
   object-fit: cover;
 }
 
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.body {
+  padding: 15px;
+}
+
+.location {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
 .info {
-  padding: 14px;
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.info h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
-}
-
-.info p {
-  margin: 0 0 8px;
-  color: #666;
-  font-size: 14px;
-}
-
-.info span {
+.price {
+  color: #ef4444;
   font-weight: bold;
-  color: #FF3E55;
 }
 </style>

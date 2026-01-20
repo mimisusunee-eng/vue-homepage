@@ -12,7 +12,7 @@
 
 <style scoped>
 .hero {
-  background: #004AAD;
+  background: url('/house.png');
   color: rgb(255, 255, 255);
   padding: 50px;
   text-align: center;

@@ -1,85 +1,203 @@
 <template>
-  <header>
-    <nav>
+  <header class="header">
+    <nav class="nav">
+
+      <!-- LEFT : Logo -->
       <div class="logo-title">
         <img src="/logo.png" alt="Logo" class="logo" />
-        <h1>BIG HOUSEKEEPER</h1>
+        <h1 class="brand">BIG HOUSEKEEPER</h1>
       </div>
+
+      <!-- CENTER : Menu -->
       <div class="menu">
-        <button>{{ $t('buy') }}</button>
-        <button>{{ $t('Land') }}</button>
-        <button>{{ $t('rent') }}</button>
-        <button>{{ $t('commercial') }}</button>
-        <button>{{ $t('project') }}</button>
-        <button>{{ $t('homeServices') }}</button>
-        <button>{{ $t('sell') }}</button>
+        <button v-for="item in menus" :key="item">
+          {{ $t(item) }}
+        </button>
       </div>
-      <div>
-        <button @click="setLocale('en')">EN</button>
-        <button @click="setLocale('th')">TH</button>
-        <button class="login">{{ $t('login') }}</button>
+
+      <!-- RIGHT : Language + Login -->
+      <div class="actions">
+
+        <!-- Language Switcher -->
+        <div class="lang-wrapper">
+          <button class="lang-btn" @click="toggleLang">
+            <img :src="currentLang.flag" class="flag" />
+            <span>{{ currentLang.label }}</span>
+            <span class="arrow">▾</span>
+          </button>
+
+          <ul v-if="langOpen" class="lang-dropdown">
+            <li
+              v-for="lang in languages"
+              :key="lang.code"
+              @click="changeLang(lang)"
+            >
+              <img :src="lang.flag" class="flag" />
+              <span>{{ lang.label }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Login -->
+        <button class="login">
+          {{ $t('login') }}
+        </button>
+
       </div>
     </nav>
   </header>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
-const setLocale = (newLocale) => {
-  locale.value = newLocale
+const menus = [
+  'buy',
+  'Land',
+  'rent',
+  'commercial',
+  'project',
+  'homeServices',
+  'sell'
+]
+
+// language
+const langOpen = ref(false)
+
+const languages = [
+  {
+    code: 'th',
+    label: 'TH',
+    flag: 'https://flagcdn.com/w20/th.png'
+  },
+  {
+    code: 'en',
+    label: 'EN',
+    flag: 'https://flagcdn.com/w20/gb.png'
+  }
+]
+
+const currentLang = ref(languages[0])
+
+const toggleLang = () => {
+  langOpen.value = !langOpen.value
+}
+
+const changeLang = (lang) => {
+  currentLang.value = lang
+  locale.value = lang.code
+  langOpen.value = false
 }
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap');
 
-header {
-  /* background: #f0f0f0; */
-  padding: 10px;
-  font-family: 'Arial', sans-serif;
+.header {
+  padding: 12px 24px;
 }
-nav {
+
+.nav {
   display: flex;
-  gap: 20px;
-  justify-content: space-between;
   align-items: center;
-  font-size: clamp(12px, 1.2vw, 16px);
-  font-weight: 200;
-  line-height: 1.5;
+  justify-content: space-between;
   font-family: 'Comfortaa', sans-serif;
+  font-size: clamp(12px, 1.2vw, 16px);
 }
-.menu {
-  display: flex;
-  gap: 10px;
-}
-.menu button {
-  background: none;
-  border: none;
-}
-.login {
-  background:#004AAD;
-;
-  color: white;
-}
-.logo {
-  height: 50px;
-}
+
+/* LEFT */
 .logo-title {
   display: flex;
   align-items: center;
   gap: 14px;
 }
-h1 {
+
+.logo {
+  height: 48px;
+}
+
+.brand {
+  font-weight: 600;
   margin: 0;
-  font-size: 15px;
-  font-size: clamp(12px, 1.2vw, 16px);
+}
+
+/* CENTER */
+.menu {
+  display: flex;
+  gap: 16px;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* RIGHT */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Language */
+.lang-wrapper {
+  position: relative;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+}
+
+.flag {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  list-style: none;
+  padding: 6px 0;
+  min-width: 100px;
+}
+
+.lang-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.lang-dropdown li:hover {
+  background: #f2f2f2;
+}
+
+/* Login */
+.login {
+  padding: 8px 18px;
+  background: #004AAD;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
   font-weight: 500;
-  
-  font-family: 'PingFang SC', sans-serif;
 }
 </style>
-
-

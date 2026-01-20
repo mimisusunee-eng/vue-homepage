@@ -1,26 +1,33 @@
 <template>
   <div class="card">
-    <img :src="image" :alt="title" />
-    <h3>{{ title }}</h3>
-    <p>{{ location }}</p>
-    <p>{{ price }}</p>
+    <img src="/house.jpg" />
+    <div class="info">
+      <h3>Luxury Villa</h3>
+      <p>Bangkok, Thailand</p>
+      <span>฿12,000,000</span>
+    </div>
   </div>
 </template>
 
-<script setup>
-defineProps({
-  image: String,
-  title: String,
-  location: String,
-  price: String
-})
-</script>
-
 <style scoped>
 .card {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 14px;
+}
+
+span {
+  font-weight: bold;
+  color: #140858;
 }
 </style>
-

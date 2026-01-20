@@ -1,6 +1,8 @@
+/* แถบฟ้าใหญ่
+
 <template>
   <section class="hero">
-    <h1>Welcome to Home Page</h1>
+    
   </section>
 </template>
 

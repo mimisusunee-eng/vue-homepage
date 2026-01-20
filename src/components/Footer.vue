@@ -1,18 +1,14 @@
 <template>
-  <footer>
-    <p>Footer Content</p>
+  <footer class="footer">
+    <p>© 2026 BIG HOUSEKEEPER. All rights reserved.</p>
   </footer>
 </template>
 
-<script setup>
-// No script needed
-</script>
-
 <style scoped>
-footer {
-  background: #333;
-  color: white;
-  padding: 10px;
+.footer {
+  padding: 30px;
   text-align: center;
+  background: #004AAD;
+  margin-top: 60px;
 }
 </style>

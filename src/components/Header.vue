@@ -127,15 +127,21 @@ const changeLang = (lang) => {
 /* CENTER */
 .menu {
   display: flex;
-  gap: 16px;
+  flex: 1;                       /* สำคัญที่สุด */
+  justify-content: space-evenly; /* กระจายเมนู */
+  align-items: center;
 }
+
 
 .menu button {
   background: none;
   border: none;
   cursor: pointer;
   font-weight: 400;
+  white-space: nowrap;   /*  กัน Home Services ตกบรรทัด */
+  padding: 6px 10px;     /*  ระยะหายใจ */
 }
+
 
 /* RIGHT */
 .actions {

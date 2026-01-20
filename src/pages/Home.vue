@@ -45,14 +45,14 @@ const projects = [
   },
    {
     id: 3,
-    image: '/house.jpg',
+    image: '/kitten.jpg',
     title: 'Cha Xiao mimi',
     location: 'Mae Sai',
     price: '฿999,999,999,999,999,999,999,999'
   },
    {
     id: 4,
-    image: '/house.jpg',
+    image: '/kitten.jpg',
     title: 'ชาแมวเดก',
     location: 'เดกแม่สาย',
     price: '฿999,999,999,999,999,999,999,999'

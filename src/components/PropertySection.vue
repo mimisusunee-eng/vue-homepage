@@ -25,6 +25,8 @@ defineProps({
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+
+  font-family: 'Comfortaa', 'Prompt', sans-serif;
 }
 
 .section-header {
@@ -36,7 +38,7 @@ defineProps({
 
 .more {
   font-size: 14px;
-  color: #3b82f6;
+  color: #004AAD;
   cursor: pointer;
 }
 

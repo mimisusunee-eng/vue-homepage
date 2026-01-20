@@ -30,6 +30,8 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 12px rgba(253, 0, 0, 0.08);
+
+  font-family: 'Comfortaa', 'Prompt', sans-serif;
 }
 
 .card img {

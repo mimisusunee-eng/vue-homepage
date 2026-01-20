@@ -4,7 +4,10 @@
 
       <!-- คอลัมน์ซ้าย -->
       <div class="footer-column">
-        <h2 class="logo">🏠 BIG HOUSEKEEPER</h2>
+       <img src="/logo.png" alt="Big Housekeeper" class="logo-img" />
+       <span class="logo-text">BIG HOUSEKEEPER</span>
+        
+
         <p class="menu">Guide</p>
         <p class="menu">Contact us</p>
 
@@ -74,10 +77,25 @@ export default {
 </script>
 
 <style scoped>
+
+  
 .footer {
   background-color: #0b4fb3;
   color: white;
   padding: 40px 60px;
+
+  
+  font-family: 'Poppins', 'Prompt', sans-serif;
+
+
+
+  width: 100vw;
+  position: relative;
+
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .footer-top {
@@ -89,10 +107,23 @@ export default {
   flex: 1;
 }
 
-.logo {
-  font-size: 20px;
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ระยะห่างรูปกับตัวหนังสือ */
   margin-bottom: 20px;
 }
+
+.logo-img {
+  height: 40px; /* ขนาดโลโก้ */
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
 
 .menu {
   font-weight: bold;

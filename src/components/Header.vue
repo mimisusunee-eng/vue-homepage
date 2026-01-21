@@ -182,6 +182,7 @@ const changeLang = (lang) => {
   list-style: none;
   padding: 6px 0;
   min-width: 100px;
+    z-index: 9999;
 }
 
 .lang-dropdown li {
@@ -206,4 +207,67 @@ const changeLang = (lang) => {
   cursor: pointer;
   font-weight: 500;
 }
+
+/* =========================
+   RESPONSIVE HEADER
+========================= */
+
+/* iPad */
+@media (max-width: 1023px) {
+  .nav {
+    font-size: 14px;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .menu button {
+    padding: 6px 6px;
+  }
+
+  .logo {
+    height: 42px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .header {
+    padding: 10px 16px;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  /* Hide center menu */
+  .menu {
+    display: none;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .lang-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .login {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}
+
 </style>

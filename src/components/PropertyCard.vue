@@ -32,13 +32,17 @@
   box-shadow: 0 4px 12px rgba(253, 0, 0, 0.08);
 
   font-family: 'Comfortaa', 'Prompt', sans-serif;
+
+  max-width: 100%;
+
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
+
 
 .badge {
   position: absolute;
@@ -74,4 +78,11 @@
   color: #ef4444;
   font-weight: bold;
 }
+/* Mobile */
+@media (max-width: 767px) {
+  .card img {
+    height: 180px;
+  }
+}
+
 </style>

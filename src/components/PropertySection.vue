@@ -12,11 +12,11 @@
 </template>
 
 <script setup>
-import PropertyCard from './PropertyCard.vue'
+import PropertyCard from "./PropertyCard.vue";
 
 defineProps({
-  title: String
-})
+  title: String,
+});
 </script>
 
 <style scoped>
@@ -26,8 +26,11 @@ defineProps({
   max-width: 1400px;
   margin: 0 auto;
 
-  font-family: 'Comfortaa', 'Prompt', sans-serif;
+  box-sizing: border-box; 
+
+  font-family: "Comfortaa", "Prompt", sans-serif;
 }
+
 
 .section-header {
   display: flex;
@@ -38,7 +41,7 @@ defineProps({
 
 .more {
   font-size: 14px;
-  color: #004AAD;
+  color: #004aad;
   cursor: pointer;
 }
 
@@ -46,5 +49,27 @@ defineProps({
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .section {
+    padding: 40px 24px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section {
+    padding: 24px 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; 
+  }
 }
 </style>

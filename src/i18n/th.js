@@ -10,5 +10,6 @@ export default {
   project: 'โครงการ',
   homeServices: 'บริการบ้าน',
   sell: 'ขาย',
-  login: 'เข้าสู่ระบบ'
+  login: 'เข้าสู่ระบบ',
+  buy: 'ซื้อ'
 }

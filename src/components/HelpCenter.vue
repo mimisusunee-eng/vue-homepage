@@ -74,4 +74,28 @@
   font-size: 13px;
   color: #6b7280;
 }
+
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .help-section {
+    padding: 40px 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .help-section {
+    padding: 32px 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .help-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 </style>

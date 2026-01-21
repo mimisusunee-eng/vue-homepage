@@ -1,12 +1,10 @@
 <template>
   <footer class="footer">
     <div class="footer-top">
-
       <!-- คอลัมน์ซ้าย -->
       <div class="footer-column">
-       <img src="/logo.png" alt="Big Housekeeper" class="logo-img" />
-       <span class="logo-text">BIG HOUSEKEEPER</span>
-        
+        <img src="/logo.png" alt="Big Housekeeper" class="logo-img" />
+        <span class="logo-text">BIG HOUSEKEEPER</span>
 
         <p class="menu">Guide</p>
         <p class="menu">Contact us</p>
@@ -16,9 +14,7 @@
           Rama 9 Road, Huai Khwang, Bangkok 10310
         </p>
 
-        <p class="text">
-          Telephone : +66(0)63682999 / +8613693665327
-        </p>
+        <p class="text">Telephone : +66(0)63682999 / +8613693665327</p>
       </div>
 
       <!-- คอลัมน์กลาง -->
@@ -26,16 +22,13 @@
         <p class="menu">News</p>
 
         <p class="text">
-          Pattaya : Name : Baidi International (Pattaya) Real Estate Asset Management
+          Pattaya : Name : Baidi International (Pattaya) Real Estate Asset
+          Management
         </p>
 
-        <p class="text">
-          Nongprue, Banglamung, Chonburi Province 20150
-        </p>
+        <p class="text">Nongprue, Banglamung, Chonburi Province 20150</p>
 
-        <p class="text">
-          Mail : support@bighousekeeper.cn
-        </p>
+        <p class="text">Mail : support@bighousekeeper.cn</p>
       </div>
 
       <!-- คอลัมน์ขวา -->
@@ -44,62 +37,59 @@
 
         <div class="qr-group">
           <div class="qr">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service" />
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service"
+            />
             <p>service</p>
           </div>
 
           <div class="qr">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat" />
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat"
+            />
             <p>WeChat</p>
           </div>
 
           <div class="qr">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp" />
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp"
+            />
             <p>mini apps</p>
           </div>
         </div>
       </div>
-
     </div>
 
-    <hr class="divider">
+    <hr class="divider" />
 
     <div class="footer-bottom">
-      <p>© 2024 Big Housekeeper - All rights reserved - Webmaster by bighousekeeper.cn</p>
+      <p>
+        © 2024 Big Housekeeper - All rights reserved - Webmaster by
+        bighousekeeper.cn
+      </p>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
-}
+  name: "Footer",
+};
 </script>
 
 <style scoped>
 
-  
+
 .footer {
   background-color: #0b4fb3;
   color: white;
-  padding: 40px 60px;
-
-  
-  font-family: 'Poppins', 'Prompt', sans-serif;
-
-
-
-  width: 100vw;
-  position: relative;
-
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  padding: 40px 24px;
+  font-family: 'Poppins', 'Prompt', 'sans-serif';
 }
 
 .footer-top {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -161,5 +151,27 @@ export default {
 .footer-bottom {
   text-align: center;
   font-size: 13px;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .qr-group {
+    justify-content: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
 }
 </style>

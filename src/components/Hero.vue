@@ -1,13 +1,18 @@
-/* แถบบน */ 
+/* แถบบน */
 
 <template>
   <section class="hero">
     <div class="overlay">
       <div class="search-box">
         <!-- location -->
-        <div class="location">
-          Pattaya
+        <div class="location" @click="toggleDropdown">
+          {{ selectedLocation }}
           <span class="arrow">▼</span>
+
+          <ul v-if="showDropdown" class="dropdown">
+            <li @click.stop="selectLocation('Bangkok')">Bangkok</li>
+            <li @click.stop="selectLocation('Pattaya')">Pattaya</li>
+          </ul>
         </div>
 
         <!-- input -->
@@ -24,25 +29,33 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const selectedLocation = ref("Pattaya");
+const showDropdown = ref(false);
+
+const toggleDropdown = () => {
+  showDropdown.value = !showDropdown.value;
+};
+
+const selectLocation = (location) => {
+  selectedLocation.value = location;
+  showDropdown.value = false;
+  console.log("Selected location:", location);
+};
 </script>
 
 <style scoped>
 .hero {
-  width: 100vw;
+  width: 100%;
   height: 520px;
-  background-image: url('/background.png');
+  background-image: url("/background.png");
   background-size: cover;
   background-position: center;
   position: relative;
 
-  font-family: 'Comfortaa', 'Prompt', sans-serif;
-
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  font-family: "Comfortaa", "Prompt", sans-serif;
 }
-
 
 /* dark overlay */
 .overlay {
@@ -64,7 +77,10 @@
   padding: 10px;
   width: 720px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  box-sizing: border-box;
 }
+
 
 /* location */
 .location {
@@ -74,6 +90,31 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* dropdown */
+.dropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 6px 0;
+  width: 140px;
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background: #f3f4f6;
 }
 
 .arrow {
@@ -91,7 +132,7 @@
 
 /* button */
 .search-box button {
-  background: #004AAD;
+  background: #004aad;
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -99,4 +140,31 @@
   font-size: 14px;
   cursor: pointer;
 }
+
+@media (max-width: 767px) {
+  .search-box {
+    width: 92%;
+    flex-direction: column;
+    border-radius: 24px;
+    gap: 10px;
+  }
+
+  .location {
+    width: 100%;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 14px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+}
+
 </style>

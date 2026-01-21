@@ -18,12 +18,18 @@ import HelpCenter from '../components/HelpCenter.vue'
 
 
 <style scoped>
-.help {
-  padding: 40px;
+/* iPad */
+@media (max-width: 1023px) {
+  :deep(.property-section) {
+    padding: 32px 0;
+  }
 }
 
-.help-box {
-  display: flex;
-  gap: 20px;
+/* Mobile */
+@media (max-width: 767px) {
+  :deep(.property-section) {
+    padding: 24px 0;
+  }
 }
+
 </style>

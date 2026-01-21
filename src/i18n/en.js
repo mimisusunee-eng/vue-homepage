@@ -10,5 +10,7 @@ export default {
   project: 'Project',
   homeServices: 'Home Services',
   sell: 'Sell',
-  login: 'Login'
+  login: 'Login',
+  buy: 'Buy',
+  Land: 'Land',
 }

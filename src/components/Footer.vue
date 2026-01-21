@@ -16,7 +16,6 @@
     <div class="line"></div>
 
     <!-- CONTACT -->
-    <!-- เอาไปไว้ที่เดิมหากไม่ชอบ -->
     <h3>Contact us</h3>
     <div class="contact-wrap"> 
       <div class="contact">

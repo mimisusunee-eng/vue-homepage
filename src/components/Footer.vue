@@ -1,34 +1,30 @@
 <template>
   <footer class="footer">
-
     <div class="header">
-  <div class="logo-box">
-    <img src="/logo.png" class="logo-img" />
-    <span class="logo-text">BIG HOUSEKEEPER</span>
-  </div>
+      <div class="logo-box">
+        <img src="/logo.png" class="logo-img" />
+        <span class="logo-text">BIG HOUSEKEEPER</span>
+      </div>
 
-  <div class="menu">
-    <span>Guide</span>
-    <span>News</span>
-    <span>About us</span>
-  </div>
-
-  
-</div>
+      <div class="menu">
+        <span>Guide</span>
+        <span>News</span>
+        <span>About us</span>
+      </div>
+    </div>
 
     <div class="line"></div>
 
     <!-- CONTACT -->
-    <div class="contact-wrap">
+    <!-- เอาไปไว้ที่เดิมหากไม่ชอบ -->
+    <h3>Contact us</h3>
+    <div class="contact-wrap"> 
       <div class="contact">
-        <h3>Contact us</h3>
         <p>
           Bangkok：33/4 The Nine Tower Grand Rama 9, Building B, 30th Floor,
           Rama 9 Road, Huai Khwang, Huai Khwang, Bangkok 10310
         </p>
-        <p>
-          Telephone：+66(0)636582999 / +8613693665327
-        </p>
+        <p>Telephone：+66(0)636582999 / +8613693665327</p>
       </div>
 
       <div class="v-line"></div>
@@ -36,12 +32,11 @@
       <div class="contact">
         <p>
           Pattaya：Name : Baidi International (Pattaya) Real Estate Asset
-          Management Co.,Ltd No.388/237 Moo.10 Nongprue, Banglamung, Chonburi Province 20150
+          Management Co.,Ltd No.388/237 Moo.10 Nongprue, Banglamung, Chonburi
+          Province 20150
         </p>
-        
-        <p>
-          Mail：support@bighousekeeper.cn
-        </p>
+
+        <p>Mail：support@bighousekeeper.cn</p>
       </div>
     </div>
 
@@ -57,22 +52,26 @@
           <img src="/fb.svg" alt="Facebook" />
           <img src="/ig.svg" alt="Instagram" />
           <img src="/yt.svg" alt="YouTube" />
-</div>
-
-
+        </div>
       </div>
 
       <div class="qr-wrap">
         <div class="qr">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service" />
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service"
+          />
           <span>service</span>
         </div>
         <div class="qr">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat" />
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat"
+          />
           <span>WeChat</span>
         </div>
         <div class="qr">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp" />
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp"
+          />
           <span>mini apps</span>
         </div>
       </div>
@@ -82,9 +81,9 @@
 
     <!-- COPYRIGHT -->
     <div class="copyright">
-      © 2024 Big Housekeeper - All rights reserved - Webmaster by bighousekeeper.cn
+      © 2024 Big Housekeeper - All rights reserved - Webmaster by
+      bighousekeeper.cn
     </div>
-
   </footer>
 </template>
 
@@ -98,11 +97,10 @@ export default {
 .footer {
   background: #0b4fb3;
   color: #fff;
-  padding: 40px 60px;
+  padding: 40px 15%; /* ลง 15% ออกหาก มันแคบไป*/
 
-   font-family: "Comfortaa", "Prompt", sans-serif;
+  font-family: "Comfortaa", "Prompt", sans-serif;
 }
-
 
 .top {
   display: flex;
@@ -127,16 +125,16 @@ export default {
 
 .menu {
   display: flex;
-  justify-content: center; /* Guide News About us ไม่อยู่ตรงกลางว่ะ */
+  justify-content: space-between;
   gap: 100px;
   font-size: 18px;
+  margin: 30px 0;
 }
-
 
 /* LINE */
 .line {
   height: 1px;
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.35);
   margin: 28px 0;
 }
 
@@ -159,7 +157,7 @@ export default {
 
 .v-line {
   width: 1px;
-  background: rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* FOLLOW */
@@ -181,15 +179,14 @@ export default {
 }
 
 .icons img {
-  width: 40px;   /* ไอคอนแอพไม่มา */
+  width: 40px; /* ไอคอนแอพไม่มา */
   height: 40px;
   object-fit: contain;
   background: white;
   padding: 8px;
-  border-radius: 10px; 
+  border-radius: 10px;
   cursor: pointer;
 }
-
 
 .icons i {
   width: 46px;
@@ -238,7 +235,8 @@ export default {
   }
 
   .menu {
-    gap: 40px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .qr-wrap {

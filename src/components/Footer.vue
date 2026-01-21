@@ -179,10 +179,9 @@ export default {
 }
 
 .icons img {
-  width: 40px; /* ไอคอนแอพไม่มา */
+  width: 40px; 
   height: 40px;
   object-fit: contain;
-  background: white;
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;

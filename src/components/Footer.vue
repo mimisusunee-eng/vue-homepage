@@ -1,73 +1,90 @@
 <template>
   <footer class="footer">
-    <div class="footer-top">
-      <!-- คอลัมน์ซ้าย -->
-      <div class="footer-column">
-        <img src="/logo.png" alt="Big Housekeeper" class="logo-img" />
-        <span class="logo-text">BIG HOUSEKEEPER</span>
 
-        <p class="menu">Guide</p>
-        <p class="menu">Contact us</p>
+    <div class="header">
+  <div class="logo-box">
+    <img src="/logo.png" class="logo-img" />
+    <span class="logo-text">BIG HOUSEKEEPER</span>
+  </div>
 
-        <p class="text">
-          Bangkok : 33/4 The Nine Tower Grand Rama 9 Building B, 30th Floor,
-          Rama 9 Road, Huai Khwang, Bangkok 10310
+  <div class="menu">
+    <span>Guide</span>
+    <span>News</span>
+    <span>About us</span>
+  </div>
+
+  
+</div>
+
+    <div class="line"></div>
+
+    <!-- CONTACT -->
+    <div class="contact-wrap">
+      <div class="contact">
+        <h3>Contact us</h3>
+        <p>
+          Bangkok：33/4 The Nine Tower Grand Rama 9, Building B, 30th Floor,
+          Rama 9 Road, Huai Khwang, Huai Khwang, Bangkok 10310
         </p>
-
-        <p class="text">Telephone : +66(0)63682999 / +8613693665327</p>
+        <p>
+          Telephone：+66(0)636582999 / +8613693665327
+        </p>
       </div>
 
-      <!-- คอลัมน์กลาง -->
-      <div class="footer-column">
-        <p class="menu">News</p>
+      <div class="v-line"></div>
 
-        <p class="text">
-          Pattaya : Name : Baidi International (Pattaya) Real Estate Asset
-          Management
+      <div class="contact">
+        <p>
+          Pattaya：Name : Baidi International (Pattaya) Real Estate Asset
+          Management Co.,Ltd No.388/237 Moo.10 Nongprue, Banglamung, Chonburi Province 20150
         </p>
+        
+        <p>
+          Mail：support@bighousekeeper.cn
+        </p>
+      </div>
+    </div>
 
-        <p class="text">Nongprue, Banglamung, Chonburi Province 20150</p>
+    <div class="line"></div>
 
-        <p class="text">Mail : support@bighousekeeper.cn</p>
+    <!-- FOLLOW -->
+    <div class="follow-wrap">
+      <div class="follow">
+        <h3>Follow Us</h3>
+        <div class="icons">
+          <img src="/xhs.svg" alt="XHS" />
+          <img src="/tiktok.svg" alt="TikTok" />
+          <img src="/fb.svg" alt="Facebook" />
+          <img src="/ig.svg" alt="Instagram" />
+          <img src="/yt.svg" alt="YouTube" />
+</div>
+
+
       </div>
 
-      <!-- คอลัมน์ขวา -->
-      <div class="footer-column">
-        <p class="menu">About us</p>
-
-        <div class="qr-group">
-          <div class="qr">
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service"
-            />
-            <p>service</p>
-          </div>
-
-          <div class="qr">
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat"
-            />
-            <p>WeChat</p>
-          </div>
-
-          <div class="qr">
-            <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp"
-            />
-            <p>mini apps</p>
-          </div>
+      <div class="qr-wrap">
+        <div class="qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service" />
+          <span>service</span>
+        </div>
+        <div class="qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat" />
+          <span>WeChat</span>
+        </div>
+        <div class="qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp" />
+          <span>mini apps</span>
         </div>
       </div>
     </div>
 
-    <hr class="divider" />
+    <div class="line"></div>
 
-    <div class="footer-bottom">
-      <p>
-        © 2024 Big Housekeeper - All rights reserved - Webmaster by
-        bighousekeeper.cn
-      </p>
+    <!-- COPYRIGHT -->
+    <div class="copyright">
+      © 2024 Big Housekeeper - All rights reserved - Webmaster by bighousekeeper.cn
     </div>
+
   </footer>
 </template>
 
@@ -78,58 +95,117 @@ export default {
 </script>
 
 <style scoped>
-
-
 .footer {
-  background-color: #0b4fb3;
-  color: white;
-  padding: 40px 24px;
-  font-family: 'Poppins', 'Prompt', 'sans-serif';
+  background: #0b4fb3;
+  color: #fff;
+  padding: 40px 60px;
+
+   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
-.footer-top {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
 
-.footer-column {
-  flex: 1;
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 10px; /* ระยะห่างรูปกับตัวหนังสือ */
-  margin-bottom: 20px;
+  gap: 12px;
 }
 
 .logo-img {
-  height: 40px; /* ขนาดโลโก้ */
+  height: 42px;
 }
 
 .logo-text {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: bold;
 }
-
-
 
 .menu {
-  font-weight: bold;
-  margin: 10px 0;
+  display: flex;
+  justify-content: center; /* Guide News About us ไม่อยู่ตรงกลางว่ะ */
+  gap: 100px;
+  font-size: 18px;
 }
 
-.text {
+
+/* LINE */
+.line {
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+  margin: 28px 0;
+}
+
+/* CONTACT */
+.contact-wrap {
+  display: flex;
+  gap: 40px;
+}
+
+.contact {
+  flex: 1;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.9;
+}
+
+.contact h3 {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
-.qr-group {
+.v-line {
+  width: 1px;
+  background: rgba(255,255,255,0.4);
+}
+
+/* FOLLOW */
+.follow-wrap {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.follow h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.icons img {
+  width: 40px;   /* ไอคอนแอพไม่มา */
+  height: 40px;
+  object-fit: contain;
+  background: white;
+  padding: 8px;
+  border-radius: 10px; 
+  cursor: pointer;
+}
+
+
+.icons i {
+  width: 46px;
+  height: 46px;
+  background: #fff;
+  color: #0b4fb3;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* QR */
+.qr-wrap {
+  display: flex;
+  gap: 30px;
 }
 
 .qr {
@@ -137,40 +213,39 @@ export default {
 }
 
 .qr img {
-  background: white;
-  padding: 6px;
-  border-radius: 6px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 18px;
 }
 
-.divider {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  margin: 30px 0;
+.qr span {
+  display: block;
+  margin-top: 8px;
 }
 
-.footer-bottom {
-  text-align: center;
+/* COPYRIGHT */
+.copyright {
   font-size: 13px;
 }
 
-/* Tablet */
-@media (max-width: 1023px) {
-  .footer-top {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .footer-top {
-    grid-template-columns: 1fr;
+/* MOBILE */
+@media (max-width: 768px) {
+  .top,
+  .contact-wrap,
+  .follow-wrap {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .qr-group {
+  .menu {
+    gap: 40px;
+  }
+
+  .qr-wrap {
     justify-content: center;
   }
 
-  .footer {
+  .copyright {
     text-align: center;
   }
 }

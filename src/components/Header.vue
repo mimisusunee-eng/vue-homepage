@@ -2,7 +2,7 @@
   <header class="header">
     <nav class="nav">
 
-      <!-- LEFT : Logo -->
+      <!-- Logo -->
       <div class="logo-title">
         <img src="/logo.png" alt="Logo" class="logo" />
         <h1 class="brand">BIG HOUSEKEEPER</h1>
@@ -23,7 +23,7 @@
           <button class="lang-btn" @click="toggleLang">
             <img :src="currentLang.flag" class="flag" />
             <span>{{ currentLang.label }}</span>
-            <span class="arrow">▾</span>
+            <span class="arrow">˅</span>
           </button>
 
           <ul v-if="langOpen" class="lang-dropdown">
@@ -70,13 +70,13 @@ const langOpen = ref(false)
 const languages = [
   {
     code: 'th',
-    label: 'TH',
-    flag: 'https://flagcdn.com/w20/th.png'
+    label: 'ภาษาไทย',
+    flag: '/th.svg'
   },
   {
     code: 'en',
-    label: 'EN',
-    flag: 'https://flagcdn.com/w20/gb.png'
+    label: 'English',
+    flag: '/en.svg'
   }
 ]
 
@@ -127,9 +127,10 @@ const changeLang = (lang) => {
 /* CENTER */
 .menu {
   display: flex;
-  flex: 1;                       /* สำคัญที่สุด */
-  justify-content: space-evenly; /* กระจายเมนู */
+  flex: 1;                       
+  justify-content: space-evenly; 
   align-items: center;
+  
 }
 
 
@@ -137,9 +138,11 @@ const changeLang = (lang) => {
   background: none;
   border: none;
   cursor: pointer;
+  color:#363E47;
+  font-size: 16px;
   font-weight: 400;
-  white-space: nowrap;   /*  กัน Home Services ตกบรรทัด */
-  padding: 6px 10px;     /*  ระยะหายใจ */
+  white-space: nowrap;   
+  padding: 6px 10px;     
 }
 
 
@@ -150,51 +153,70 @@ const changeLang = (lang) => {
   gap: 12px;
 }
 
-/* Language */
+/* ภาษา */
 .lang-wrapper {
   position: relative;
+  color: #4B5053;
 }
 
 .lang-btn {
-  display: flex;
+  display: flex; /* ทำ */
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  font-size: 18px;
+  padding: 10px 18px;   
+  height: 40px;    
   border: 1px solid #ddd;
   border-radius: 20px;
   background: white;
   cursor: pointer;
 }
 
+.lang-btn span {
+  color: #4B5053;  
+  font-size: 18px;  
+  font-weight: 400; 
+}
+
 .flag {
-  width: 20px;
-  height: 14px;
+  width: 38px; /* ทำ */
+  height: 25.667px;
   object-fit: cover;
 }
 
+.lang-btn .arrow { /* ลูกศร */
+  font-size: 18px;
+  font-weight: 7700;
+  color: #363E47;
+}
+
+
 .lang-dropdown {
-  position: absolute;
+  position: absolute; /* ทำ */
   top: 110%;
   right: 0;
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  box-shadow: 0 1px 7px 0 rgba(30, 102, 133, 0.30);
+  border-radius: 20px;
   list-style: none;
   padding: 6px 0;
-  min-width: 100px;
-    z-index: 9999;
+  min-width: 120px;
+  z-index: 9999;
 }
 
 .lang-dropdown li {
   display: flex;
   align-items: center;
+  color: #4B5053;
   gap: 8px;
   padding: 6px 12px;
   cursor: pointer;
+  
 }
 
 .lang-dropdown li:hover {
   background: #f2f2f2;
+  border-radius: 20px;
 }
 
 /* Login */
@@ -205,12 +227,10 @@ const changeLang = (lang) => {
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
 }
 
-/* =========================
-   RESPONSIVE HEADER
-========================= */
+/* RESPONSIVE HEADER */
 
 /* iPad */
 @media (max-width: 1023px) {
@@ -248,11 +268,13 @@ const changeLang = (lang) => {
   }
 
   .logo {
-    height: 36px;
+    width: 50px;
+    height: 50px;  
   }
 
   .brand {
-    font-size: 14px;
+    width: 295px;
+    height: 39px;
   }
 
   .actions {
@@ -265,8 +287,10 @@ const changeLang = (lang) => {
   }
 
   .login {
-    padding: 6px 14px;
-    font-size: 12px;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
   }
 }
 

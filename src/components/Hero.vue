@@ -94,12 +94,12 @@ const selectLocation = (location) => {
   cursor: pointer;
 }
 
-/* dropdown */
 .dropdown {
   position: absolute;
   top: 120%;
   left: 0;
-  background: #fff;
+  background: #F1F4F9;
+  color: #2d2d2d;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   list-style: none;
@@ -114,11 +114,12 @@ const selectLocation = (location) => {
 }
 
 .dropdown li:hover {
-  background: #f3f4f6;
+  background: #F1F4F9;
 }
 
 .arrow {
-  font-size: 12px;
+  font-size: 18px;
+  color: #2d2d2d;
 }
 
 /* input */
@@ -129,7 +130,6 @@ const selectLocation = (location) => {
   padding: 0 20px;
   font-size: 14px;
 }
-
 /* button */
 .search-box button {
   background: #004aad;

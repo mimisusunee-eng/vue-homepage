@@ -3,6 +3,7 @@
     <div class="section-header">
       <h2>{{ title }}</h2>
       <span class="more">more →</span>
+      <!-- <img src="/arrow.jpg" alt="more" class="more" /> -->
     </div>
 
     <div class="grid">
@@ -37,12 +38,13 @@ defineProps({
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  color: #111B2C;
 }
 
-.more {
-  font-size: 14px;
-  color: #004aad;
-  cursor: pointer;
+.section-header h2 {
+  color:  #111B2C;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .grid {

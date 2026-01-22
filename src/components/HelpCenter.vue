@@ -37,9 +37,12 @@
 }
 
 .title {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 24px;
+  color: #171E2D;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 39px */
+  text-transform: uppercase;
 }
 
 .cards {
@@ -49,7 +52,7 @@
 }
 
 .help-card {
-  background: #f3f6fb;
+  background: #F1F4F9;
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -58,21 +61,28 @@
 }
 
 .help-card img {
-  width: 90px;
-  height: 90px;
+  width: 164px;
+  height: 218.667px;
   object-fit: contain;
 }
 
 .text h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
+  color: #171E2D;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 39px */
+  text-transform: uppercase;
 }
 
 .text p {
   margin: 6px 0 0;
-  font-size: 13px;
-  color: #6b7280;
+  font-size: 14px;
+  color: #4B4F58;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
 }
 
 
@@ -81,7 +91,7 @@
   .help-section {
     padding: 40px 24px;
   }
-}
+ }
 
 /* Mobile */
 @media (max-width: 767px) {

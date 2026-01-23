@@ -2,8 +2,11 @@
   <section class="section">
     <div class="section-header">
       <h2>{{ title }}</h2>
-      <span class="more">more →</span>
-      <!-- <img src="/arrow.jpg" alt="more" class="more" /> -->
+      <div class="more">
+        <span>more</span>
+         <div class="arrow-circle"></div>
+         <img src="/arrow1.svg" alt="more" />
+      </div>
     </div>
 
     <div class="grid">
@@ -32,6 +35,27 @@ defineProps({
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
+.more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 16px;
+  color: #53575B;
+}
+
+.arrow-circle img {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.more img {
+  width: 16px;
+  margin-left: -4px;
+  color: #0E1218;
+}
 
 .section-header {
   display: flex;

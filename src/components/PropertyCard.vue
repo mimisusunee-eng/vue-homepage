@@ -14,16 +14,28 @@
       <h3 class="title">Lumpini Jomtien</h3>
 
       <div class="location">
-        <span class="icon">📍</span>
+        <img src="/gps.svg" alt="location" />
         <span class="text">Jomtiensaineung Rd, Muang</span>
       </div>
 
       <div class="meta">
-        <span>🛏 4</span>
-        <span>🛁 2</span>
-        <span>📐 457m²</span>
-        <span>Pattaya</span>
-      </div>
+  <span class="meta-item">
+    <img src="/bed.svg" class="meta" />
+    4
+  </span>
+
+  <span class="meta-item">
+    <img src="/shower.svg" class="meta" />
+    2
+  </span>
+
+  <span class="meta-item">
+    <img src="/land.svg" class="meta" />
+    457m²
+  </span>
+
+  <span>Pattaya</span>
+</div>
 
       <div class="price">฿87554</div>
     </div>
@@ -33,6 +45,19 @@
 
 <script setup>
 </script>
+
+
+<style lang="scss" scoped>
+.card {
+  background: #F1F4F9;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #ffffff;
+    transform: translateY(-4px);
+  }
+}
+</style>
 
 <style scoped>
 .card {
@@ -121,16 +146,25 @@
   font-size: 14px;
 }
 
-/* META INFO ทำไมแก้แล้วไม่เปลี่ยนวะ */
-.meta { 
-  display: flex;  
+/* ได้แล้วสัสเอ้ย */
+.meta {
+  display: flex;
   align-items: center;
   gap: 14px;
   font-size: 14px;
-  font-weight:500;
-  color: #4B5053;
-  margin-bottom: 14px;
 }
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-item img {
+  width: 14px;
+  height: 14px;
+}
+
 
 /* PRICE */
 .price {

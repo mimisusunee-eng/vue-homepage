@@ -23,7 +23,9 @@
           <button class="lang-btn" @click="toggleLang">
             <img :src="currentLang.flag" class="flag" />
             <span>{{ currentLang.label }}</span>
-            <span class="arrow">˅</span>
+            <div class="arrow">
+            <img src="/arrow2.svg" alt="arrow" />
+       </div>
           </button>
 
           <ul v-if="langOpen" class="lang-dropdown">
@@ -93,7 +95,7 @@ const changeLang = (lang) => {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>  
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap');
 
 .header {
@@ -130,10 +132,36 @@ const changeLang = (lang) => {
   flex: 1;                       
   justify-content: space-evenly; 
   align-items: center;
-  
+
+  button {    
+    position: relative;       
+    cursor: pointer;
+    font-size: 16px;
+    color: #363E47;
+    padding: 8px 0;
+    transition: color 0.25s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #1E6685;
+      transition: width 0.25s ease;
+    }
+
+    &:hover {
+      color: #1E6685;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 }
-
-
+  
 .menu button {
   background: none;
   border: none;

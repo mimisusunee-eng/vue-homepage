@@ -7,7 +7,9 @@
         <!-- location -->
         <div class="location" @click="toggleDropdown">
           {{ selectedLocation }}
-          <span class="arrow">▼</span>
+          <div class="arrow">
+          <img src="/arrow3.svg" alt="arrow" />
+          </div>
 
           <ul v-if="showDropdown" class="dropdown">
             <li @click.stop="selectLocation('Bangkok')">Bangkok</li>
@@ -53,7 +55,6 @@ const selectLocation = (location) => {
   background-size: cover;
   background-position: center;
   position: relative;
-
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
@@ -65,22 +66,25 @@ const selectLocation = (location) => {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 60px;
+  padding-bottom: 0px;
 }
 
-/* search container */
+/* search center */
 .search-box {
   background: #fff;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
   border-radius: 999px;
   display: flex;
   align-items: center;
   padding: 10px;
   width: 720px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
   box-sizing: border-box;
+  border-bottom: 1px solid #F1F4F9;
+  
 }
-
 
 /* location */
 .location {
@@ -92,6 +96,7 @@ const selectLocation = (location) => {
   gap: 6px;
   position: relative;
   cursor: pointer;
+  
 }
 
 .dropdown {
@@ -111,15 +116,23 @@ const selectLocation = (location) => {
 .dropdown li {
   padding: 10px 16px;
   cursor: pointer;
+  color: #2d2d2d;         
+  transition: all 0.2s ease;
 }
 
 .dropdown li:hover {
-  background: #F1F4F9;
+  background: #ffffff;     
+  color: #2D2D2D;         
 }
 
 .arrow {
-  font-size: 18px;
-  color: #2d2d2d;
+  width: 16px;
+  height: 16px;
+}
+
+.arrow img {
+  width: 10px;
+  height: 12px;
 }
 
 /* input */

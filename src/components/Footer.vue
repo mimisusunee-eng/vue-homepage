@@ -96,9 +96,14 @@ export default {
 .footer {
   background: #0b4fb3;
   color: #fff;
-  padding: 40px 15%; /* ลง 15% ออกหาก มันแคบไป*/
-
+  padding: 40px 15%; 
   font-family: "Comfortaa", "Prompt", sans-serif;
+}
+
+.footer h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .top {
@@ -125,8 +130,8 @@ export default {
 .menu {
   display: flex;
   justify-content: space-between;
-  gap: 100px;
-  font-size: 18px;
+  gap: 80px;
+  font-size: 16px;
   margin: 30px 0;
 }
 
@@ -134,7 +139,7 @@ export default {
 .line {
   height: 1px;
   background: rgba(255, 255, 255, 0.35);
-  margin: 28px 0;
+  margin: 32px 0;
 }
 
 /* CONTACT */
@@ -167,22 +172,22 @@ export default {
 }
 
 .follow h3 {
-  font-size: 20px;
-  margin-bottom: 16px;
+  font-size: 16px;
+  margin-bottom: 600;
 }
 
 .icons {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   margin-top: 12px;
 }
 
 .icons img {
-  width: 40px; 
-  height: 40px;
+  width: 36px; 
+  height: 36px;
   object-fit: contain;
-  padding: 8px;
-  border-radius: 10px;
+  padding: 6px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -200,7 +205,7 @@ export default {
 /* QR */
 .qr-wrap {
   display: flex;
-  gap: 30px;
+  gap: 24px;
 }
 
 .qr {
@@ -209,18 +214,22 @@ export default {
 
 .qr img {
   background: #fff;
-  padding: 8px;
-  border-radius: 18px;
+  width: 88px;
+  height: 88px;
+  padding: 6px;
+  border-radius: 14px;
 }
 
 .qr span {
   display: block;
-  margin-top: 8px;
+  margin-top: px;
+  font-size: 12px;
 }
 
 /* COPYRIGHT */
 .copyright {
-  font-size: 13px;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 /* MOBILE */

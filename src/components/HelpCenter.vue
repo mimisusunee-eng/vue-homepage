@@ -54,7 +54,7 @@
 .help-card {
   background: #F1F4F9;
   border-radius: 16px;
-  padding: 24px;
+  padding: 0px 5px;
   display: flex;
   align-items: center;
   gap: 20px;

@@ -21,6 +21,7 @@
         <input
           type="text"
           placeholder="Search by location, project name or keyword"
+          style="font-size: 20px;"
         />
 
         <!-- button -->
@@ -103,7 +104,7 @@ const selectLocation = (location) => {
   position: absolute;
   top: 120%;
   left: 0;
-  background: #F1F4F9;
+  background: #90989C80;
   color: #2d2d2d;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);

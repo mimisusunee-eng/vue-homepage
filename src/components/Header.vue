@@ -99,7 +99,8 @@ const changeLang = (lang) => {
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap');
 
 .header {
-  padding: 12px 24px;
+  padding: 15px 120px 15px 100px;
+  height: 80px;
 }
 
 .nav {
@@ -118,7 +119,8 @@ const changeLang = (lang) => {
 }
 
 .logo {
-  height: 48px;
+  height: 50px;
+  width: 50px;
 }
 
 .brand {
@@ -129,7 +131,8 @@ const changeLang = (lang) => {
 /* CENTER */
 .menu {
   display: flex;
-  flex: 1;                       
+  flex: 1;            
+  padding: 0px 80px;           
   justify-content: space-evenly; 
   align-items: center;
 
@@ -138,18 +141,21 @@ const changeLang = (lang) => {
     cursor: pointer;
     font-size: 16px;
     color: #363E47;
-    padding: 8px 0;
+    padding: 0px 8px 8px 8px;
     transition: color 0.25s ease;
+    background: none;
+    border: none;
 
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -6px;
+      bottom: -8px;
       width: 0;
-      height: 2px;
+      height: 4px;
       background: #1E6685;
       transition: width 0.25s ease;
+      border-radius: 20%;
     }
 
     &:hover {
@@ -161,18 +167,6 @@ const changeLang = (lang) => {
     }
   }
 }
-  
-.menu button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color:#363E47;
-  font-size: 16px;
-  font-weight: 400;
-  white-space: nowrap;   
-  padding: 6px 10px;     
-}
-
 
 /* RIGHT */
 .actions {
@@ -194,6 +188,7 @@ const changeLang = (lang) => {
   font-size: 18px;
   padding: 10px 18px;   
   height: 40px;    
+  width: 184px;
   border: 1px solid #ddd;
   border-radius: 20px;
   background: white;
@@ -227,8 +222,8 @@ const changeLang = (lang) => {
   box-shadow: 0 1px 7px 0 rgba(30, 102, 133, 0.30);
   border-radius: 20px;
   list-style: none;
-  padding: 6px 0;
-  min-width: 120px;
+  padding: 16px 0 8px 0;
+  min-width: 184px;
   z-index: 9999;
 }
 
@@ -237,14 +232,14 @@ const changeLang = (lang) => {
   align-items: center;
   color: #4B5053;
   gap: 8px;
-  padding: 6px 12px;
+  padding: 5px 12px;
   cursor: pointer;
   
 }
 
 .lang-dropdown li:hover {
-  background: #f2f2f2;
-  border-radius: 20px;
+  background: #D9D9D980;
+  overflow: hidden;
 }
 
 /* Login */

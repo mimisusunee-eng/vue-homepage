@@ -91,7 +91,7 @@ defineProps({
 /* Mobile */
 @media (max-width: 767px) {
   .section {
-    padding: 24px 16px;
+    padding: 84px 16px;
   }
 
   .grid {

@@ -168,6 +168,7 @@
 
 /* PRICE */
 .price {
+  margin-top: 20px;
   font-size: 18px;
   font-weight: 400;
   color: #FF3E55;
@@ -177,7 +178,7 @@
 /* Mobile */
 @media (max-width: 767px) {
   .card img {
-    height: 180px;
+    /* height: 180px; */
   }
 }
 

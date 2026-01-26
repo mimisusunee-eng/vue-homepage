@@ -19,23 +19,23 @@
     <h3>Contact us</h3>
     <div class="contact-wrap"> 
       <div class="contact">
-        <p>
+        <p class="no-top-margin">
           Bangkok：33/4 The Nine Tower Grand Rama 9, Building B, 30th Floor,
           Rama 9 Road, Huai Khwang, Huai Khwang, Bangkok 10310
         </p>
-        <p>Telephone：+66(0)636582999 / +8613693665327</p>
+        <p class="float-bottom">Telephone：+66(0)636582999 / +8613693665327</p>
       </div>
 
       <div class="v-line"></div>
 
       <div class="contact">
-        <p>
+        <p class="no-top-margin">
           Pattaya：Name : Baidi International (Pattaya) Real Estate Asset
           Management Co.,Ltd No.388/237 Moo.10 Nongprue, Banglamung, Chonburi
           Province 20150
         </p>
 
-        <p>Mail：support@bighousekeeper.cn</p>
+        <p class="float-bottom">Mail：support@bighousekeeper.cn</p>
       </div>
     </div>
 
@@ -44,13 +44,13 @@
     <!-- FOLLOW -->
     <div class="follow-wrap">
       <div class="follow">
-        <h3>Follow Us</h3>
+        <h3 class="no-top-margin">Follow Us</h3>
         <div class="icons">
           <img src="/xhs.svg" alt="XHS" />
           <img src="/tiktok.svg" alt="TikTok" />
           <img src="/fb.svg" alt="Facebook" />
           <img src="/ig.svg" alt="Instagram" />
-          <img src="/yt.svg" alt="YouTube" />
+          <img src="/yt.svg" alt="YouTube" class="yt"/>
         </div>
       </div>
 
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div class="line"></div>
+    <div class="line" style="margin-top: 22px; margin-bottom: 26px;"></div>
 
     <!-- COPYRIGHT -->
     <div class="copyright">
@@ -96,7 +96,7 @@ export default {
 .footer {
   background: #0b4fb3;
   color: #fff;
-  padding: 40px 15%; 
+  padding: 40px 410px; 
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
@@ -106,7 +106,7 @@ export default {
   margin-bottom: 16px;
 }
 
-.top {
+.top {                
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,43 +115,47 @@ export default {
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 26px;
 }
 
 .logo-img {
   height: 42px;
+  width: 42px;
 }
 
 .logo-text {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 31px;
+  font-weight: 500;
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
-  gap: 80px;
-  font-size: 16px;
-  margin: 30px 0;
+  font-size: 18px;
+  margin: 33px 0;
 }
 
 /* LINE */
 .line {
   height: 1px;
   background: rgba(255, 255, 255, 0.35);
-  margin: 32px 0;
+  margin: 33px 0 24px 0;
 }
 
 /* CONTACT */
 .contact-wrap {
   display: flex;
   gap: 40px;
+  align-items: stretch;
 }
 
 .contact {
   flex: 1;
   font-size: 14px;
-  line-height: 1.9;
+  line-height: 204%;
+  display: flex;
+  flex-direction: column;
+  max-height: 160px;
 }
 
 .contact h3 {
@@ -178,15 +182,14 @@ export default {
 
 .icons {
   display: flex;
-  gap: 14px;
-  margin-top: 12px;
+  gap: 43px;
+  margin-top: 40px;
 }
 
 .icons img {
-  width: 36px; 
-  height: 36px;
+  width: auto; 
+  height: 42px;
   object-fit: contain;
-  padding: 6px;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -205,24 +208,25 @@ export default {
 /* QR */
 .qr-wrap {
   display: flex;
-  gap: 24px;
+  gap: 85px;
 }
 
 .qr {
   text-align: center;
+
 }
 
 .qr img {
   background: #fff;
-  width: 88px;
-  height: 88px;
+  width:  130px;
+  height: 130px;
   padding: 6px;
   border-radius: 14px;
 }
 
 .qr span {
   display: block;
-  margin-top: px;
+  margin-top: 16px;
   font-size: 12px;
 }
 
@@ -230,6 +234,15 @@ export default {
 .copyright {
   font-size: 12px;
   opacity: 0.7;
+}
+
+.float-bottom {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.no-top-margin{
+  margin-top: 0;
 }
 
 /* MOBILE */

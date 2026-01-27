@@ -67,7 +67,6 @@
   position: relative;
   box-shadow: 0 4px 12px rgba(253, 0, 0, 0.08);
   font-family: 'Comfortaa', 'Prompt', sans-serif;
-  max-width: 100%;
 
 }
 
@@ -159,6 +158,7 @@
   align-items: center;
   gap: 6px;
   padding-top: 10px;
+
 }
 
 .meta-item img {
@@ -167,6 +167,7 @@
   left: 33px;
   top: 291px;
 }
+
 
 .price {
   font-size: 18px;

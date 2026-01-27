@@ -31,6 +31,7 @@
 
 
 
+
       <div class="v-line"></div>
 
       <div class="contact">
@@ -103,6 +104,7 @@ export default {
   color: #fff;
   padding: 40px 15%; 
   width: 100%;
+
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
@@ -139,6 +141,7 @@ export default {
   gap: 80px;
   font-size: 16px;
   margin: 30px 0;
+
   top: 400px;
 }
 
@@ -148,6 +151,8 @@ export default {
   margin: 24px 0;
   top: 162.26px;
 }
+
+
 
 /* CONTACT */
 .contact-wrap {
@@ -161,6 +166,7 @@ export default {
   line-height: 204%;
   align-items: stretch;
   font-weight: 700;
+
 }
 
 .contact h3 {
@@ -185,6 +191,7 @@ export default {
   margin-bottom: 10px;
   font-weight: 700;
   line-height: 150%;
+
 }
 
 .icons {
@@ -199,6 +206,7 @@ export default {
   width: 42px; 
   height: 42px;
   object-fit: contain;
+ 
   border-radius: 8px;
   cursor: pointer;
 }
@@ -225,7 +233,6 @@ export default {
   font-size: 14px;
   font-weight: 700;
 }
-
 
 /* QR */
 .qr-wrap {

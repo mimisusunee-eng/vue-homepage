@@ -5,6 +5,7 @@
     <div class="overlay">
       <div class="search-box">
         <div class="hero-inner"></div>
+
         <!-- location -->
         <div class="location" @click="toggleDropdown">
           {{ selectedLocation }}
@@ -59,6 +60,7 @@ const selectLocation = (location) => {
   position: relative;
   font-family: "Comfortaa", "Prompt", sans-serif;
   height: 780px;
+
 }
 
 /* dark overlay */
@@ -103,6 +105,7 @@ const selectLocation = (location) => {
   position: relative;
   cursor: pointer;
   font-size: 30px;
+
 }
 
 .dropdown {
@@ -194,6 +197,7 @@ const selectLocation = (location) => {
   .search-box button {
     width: 100%;
   }
+
 
   .search-wrapper {
   position: absolute;

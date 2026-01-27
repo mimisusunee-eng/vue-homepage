@@ -1,6 +1,6 @@
 export default {
   newProjects: 'New Projects',
-  rentHouse: 'Rent a house',
+  rentAHouse: 'Rent a house',
   helpCenter: 'Help Center',
   buyHome: 'Buy a home',
   rentHome: 'Rent a home',
@@ -13,4 +13,5 @@ export default {
   login: 'Login',
   buy: 'Buy',
   Land: 'Land',
+  handpickedProperties: 'Handpicked properties'
 }

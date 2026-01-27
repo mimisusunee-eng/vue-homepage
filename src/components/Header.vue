@@ -56,7 +56,7 @@ import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
 
 const menus = [
-  'Buy',
+  'buy',
   'Land',
   'rent',
   'commercial',

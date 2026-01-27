@@ -1,6 +1,6 @@
 export default {
   newProjects: 'โครงการใหม่',
-  rentHouse: 'เช่าบ้าน',
+  rentAHouse: 'เช่าบ้าน',
   helpCenter: 'ศูนย์ช่วยเหลือ',
   buyHome: 'ซื้อบ้าน',
   rentHome: 'เช่าบ้าน',
@@ -13,4 +13,5 @@ export default {
   login: 'เข้าสู่ระบบ',
   Buy: 'ซื้อ' ,
   Land: 'ที่ดิน' ,
+  handpickedProperties: 'อสังหาคัดพิเศษ'
 }

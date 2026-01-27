@@ -2,9 +2,9 @@
   <div>
     <Hero />
 
-    <PropertySection :title="$t('NewProjects')" />
-    <PropertySection :title="$t('Handpicked properties')" />
-    <PropertySection :title="$t('Rent a House')" />
+    <PropertySection :title="$t('newProjects')" />
+    <PropertySection :title="$t('handpickedProperties')" />
+    <PropertySection :title="$t('rentAHouse')" />
 
     <HelpCenter />
   </div>

@@ -173,13 +173,7 @@
   font-size: 18px;
   font-weight: 400;
   color: #FF3E55;
-  width: 158.66px;
-  height: 31.43px;
-  margin-top: 10px;        
-  padding-left: 10.46px;  
-  padding-top: 10.57px;
-  box-sizing: border-box;
-  margin-left: -10.46px;
+  margin-top: 20px;        
 }
 
 /* Mobile */

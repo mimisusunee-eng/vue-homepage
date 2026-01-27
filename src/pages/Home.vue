@@ -14,6 +14,12 @@
 import Hero from '../components/Hero.vue'
 import PropertySection from '../components/PropertySection.vue'
 import HelpCenter from '../components/HelpCenter.vue'
+import { getToDo } from "../api/test.js";
+
+getToDo().then(res => {
+  console.log("This is api result: ", res.data);
+  alert(JSON.stringify(res.data, null, 2));
+});
 </script>
 
 

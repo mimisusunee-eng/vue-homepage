@@ -1,7 +1,6 @@
 <template>
   <header class="header">
     <nav class="nav">
-
       <!-- Logo -->
       <div class="logo-title">
         <img src="/logo.png" alt="Logo" class="logo" />
@@ -17,7 +16,6 @@
 
       <!-- RIGHT : Language + Login -->
       <div class="actions">
-
         <!-- Language Switcher -->
         <div class="lang-wrapper">
           <button class="lang-btn" @click="toggleLang">
@@ -28,7 +26,9 @@
        </div>
           </button>
 
+
           <ul v-if="langOpen" class="lang-dropdown">
+
             <li
               v-for="lang in languages"
               :key="lang.code"
@@ -39,11 +39,10 @@
             </li>
           </ul>
         </div>
-
         <!-- Login -->
         <button class="login">
           {{ $t('login') }}
-        </button>
+        </button> 
 
       </div>
     </nav>
@@ -225,6 +224,10 @@ const changeLang = (lang) => {
   padding: 16px 0 8px 0;
   min-width: 184px;
   z-index: 9999;
+  /*  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; */
 }
 
 .lang-dropdown li {
@@ -271,7 +274,8 @@ const changeLang = (lang) => {
   }
 
   .logo {
-    height: 42px;
+    height: 50px;
+    width: 50px;
   }
 }
 
@@ -298,6 +302,7 @@ const changeLang = (lang) => {
   .brand {
     width: 295px;
     height: 39px;
+    display: none;
   }
 
   .actions {
@@ -307,6 +312,10 @@ const changeLang = (lang) => {
   .lang-btn {
     padding: 6px 10px;
     font-size: 12px;
+    max-width: 80px;
+    span {
+      display: none;
+    }
   }
 
   .login {
@@ -317,4 +326,15 @@ const changeLang = (lang) => {
   }
 }
 
+ /* .lang-dropdown {
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    span {
+      display: none;
+    }
+  } */ 
 </style>
+

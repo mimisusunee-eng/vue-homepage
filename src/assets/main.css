@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* ตัวครอบทั้งเว็บ */
+#app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* กัน layout เพี้ยน */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

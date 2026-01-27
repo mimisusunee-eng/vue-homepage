@@ -23,19 +23,19 @@ getToDo().then(res => {
 </script>
 
 
-<style scoped>
-/* iPad */
-@media (max-width: 1023px) {
-  :deep(.property-section) {
+<style scoped lang="scss">
+$ipad: 1023px;
+$mobile: 767px;
+
+:deep(.property-section) {
+  // iPad
+  @media (max-width: $ipad) {
     padding: 32px 0;
   }
-}
 
-/* Mobile */
-@media (max-width: 767px) {
-  :deep(.property-section) {
+  // Mobile
+  @media (max-width: $mobile) {
     padding: 24px 0;
   }
 }
-
 </style>

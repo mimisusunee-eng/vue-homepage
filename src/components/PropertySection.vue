@@ -29,9 +29,7 @@ defineProps({
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-
   box-sizing: border-box; 
-
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
@@ -77,25 +75,49 @@ defineProps({
   gap: 20px;
 }
 
-/* Tablet */
+/* Ipad */
 @media (max-width: 1023px) {
   .section {
-    padding: 40px 24px;
+    padding: 36px 24px 24px;
   }
+
+
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile */
+/* iPhone */
 @media (max-width: 767px) {
-  .section {
-    padding: 84px 16px;
+
+  .section-header {
+    align-items: center; 
   }
 
-  .grid {
-    grid-template-columns: 1fr; 
+  .section-header h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .more {
+    line-height: 1;
+    margin-top: 2px; 
+  }
+
+  .more img {
+    width: 14px;
+  }
+
+  .section {
+    padding: 32px 16px 20px;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+    line-height: 1.2;
   }
 }
+
 </style>

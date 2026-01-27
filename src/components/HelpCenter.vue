@@ -88,16 +88,17 @@
 
 /* Tablet */
 @media (max-width: 1023px) {
-  .help-section {
+  :deep(.help-section) {
     padding: 40px 24px;
   }
- }
+}
 
 /* Mobile */
 @media (max-width: 767px) {
-  .help-section {
+  :deep(.help-section) {
     padding: 32px 16px;
   }
+}
 
   .cards {
     grid-template-columns: 1fr;
@@ -107,5 +108,5 @@
     flex-direction: column;
     text-align: center;
   }
-}
+
 </style>

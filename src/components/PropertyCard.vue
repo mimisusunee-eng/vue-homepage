@@ -105,7 +105,6 @@
 
 }
 
-/* CODE อีนี่ด้วย*/
 .code {
   position: absolute;
   bottom: 16px;
@@ -116,7 +115,6 @@
   opacity: 0.95;
 }
 
-/* CONTENT */
 .content {
   padding: 16px 18px 18px;
 }
@@ -145,7 +143,6 @@
   font-size: 14px;
 }
 
-/* ได้แล้วสัสเอ้ย */
 .meta {
   display: flex;
   align-items: center;
@@ -176,11 +173,96 @@
   margin-top: 20px;        
 }
 
-/* Mobile */
-@media (max-width: 767px) {
-  .card img {
+/* ================= iPad ================= */
+@media (max-width: 1024px) {
+
+  .image-wrap {
     height: 180px;
   }
+
+  .content {
+    padding: 14px 16px 16px;
+  }
+
+  .title {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .location {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+
+  .meta {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .meta-item img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .price {
+    font-size: 16px;
+    margin-top: 16px;
+  }
 }
+
+/* ================= iPhone ================= */
+@media (max-width: 767px) {
+
+  .card {
+    border-radius: 16px;
+  }
+
+  .image-wrap {
+    height: 160px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .code {
+    font-size: 11px;
+  }
+
+  .content {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .location {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .meta-item {
+    padding-top: 6px;
+  }
+
+  .meta-item img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .price {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+}
+
 
 </style>

@@ -219,4 +219,93 @@ const selectLocation = (location) => {
 
 }
 
+
+/* ================= iPad ================= */
+@media (max-width: 1024px) {
+
+  .hero {
+    height: 600px;
+  }
+
+  .search-box {
+    width: 90%;
+    height: 80px;
+    padding: 8px 12px;
+    gap: 8px;
+    bottom: -24px;
+  }
+
+  .location {
+    font-size: 20px;
+    padding: 0 14px;
+  }
+
+  .search-box input {
+    font-size: 20px;
+  }
+
+  .search-box input::placeholder {
+    font-size: 20px;
+  }
+
+  .search-box button {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .arrow img {
+    width: 18px;
+    height: auto;
+    transform: translateY(-30%);
+  }
+}
+
+/* ================= iPhone ================= */
+@media (max-width: 767px) {
+
+  .hero {
+    height: 520px;
+  }
+
+  .search-box {
+    width: 92%;
+    height: auto;
+    flex-direction: column;
+    border-radius: 24px;
+    gap: 10px;
+    padding: 12px;
+    bottom: -40px;
+  }
+
+  .location {
+    width: 100%;
+    font-size: 18px;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 14px;
+  }
+
+  .search-box input {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+
+  .search-box input::placeholder {
+    font-size: 18px;
+  }
+
+  .search-box button {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+}
+
+
 </style>

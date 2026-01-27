@@ -1,90 +1,89 @@
 <template>
   <footer class="footer">
-    <div class="header">
-      <div class="logo-box">
-        <img src="/logo.png" class="logo-img" />
-        <span class="logo-text">BIG HOUSEKEEPER</span>
-      </div>
+    <div class="footer-inner">
 
-      <div class="menu">
-        <span>Guide</span>
-        <span>News</span>
-        <span>About us</span>
-      </div>
-    </div>
+      <div class="header">
+        <div class="logo-box">
+          <img src="/logo.png" class="logo-img" />
+          <span class="logo-text">BIG HOUSEKEEPER</span>
+        </div>
 
-    <div class="line"></div>
-
-    <!-- CONTACT -->
-    <h3>Contact us</h3>
-    <div class="contact-wrap"> 
-      <div class="contact">
-        <p class="no-top-margin">
-          Bangkok：33/4 The Nine Tower Grand Rama 9, Building B, 30th Floor,
-          Rama 9 Road, Huai Khwang, Huai Khwang, Bangkok 10310
-        </p>
-        <p class="float-bottom">Telephone：+66(0)636582999 / +8613693665327</p>
-      </div>
-
-      <div class="v-line"></div>
-
-      <div class="contact">
-        <p class="no-top-margin">
-          Pattaya：Name : Baidi International (Pattaya) Real Estate Asset
-          Management Co.,Ltd No.388/237 Moo.10 Nongprue, Banglamung, Chonburi
-          Province 20150
-        </p>
-
-        <p class="float-bottom">Mail：support@bighousekeeper.cn</p>
-      </div>
-    </div>
-
-    <div class="line"></div>
-
-    <!-- FOLLOW -->
-    <div class="follow-wrap">
-      <div class="follow">
-        <h3 class="no-top-margin">Follow Us</h3>
-        <div class="icons">
-          <img src="/xhs.svg" alt="XHS" />
-          <img src="/tiktok.svg" alt="TikTok" />
-          <img src="/fb.svg" alt="Facebook" />
-          <img src="/ig.svg" alt="Instagram" />
-          <img src="/yt.svg" alt="YouTube" class="yt"/>
+        <div class="menu">
+          <span>Guide</span>
+          <span>News</span>
+          <span>About us</span>
         </div>
       </div>
 
-      <div class="qr-wrap">
-        <div class="qr">
-          <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service"
-          />
-          <span>service</span>
+      <div class="line"></div>
+
+      <h3>Contact us</h3>
+
+      <div class="contact-wrap">
+        <div class="contact">
+          <p class="no-top-margin">
+            Bangkok：33/4 The Nine Tower Grand Rama 9, Building B, 30th Floor,
+            Rama 9 Road, Huai Khwang, Huai Khwang, Bangkok 10310
+          </p>
+          <p class="float-bottom">
+            Telephone：+66(0)636582999 / +8613693665327
+          </p>
         </div>
-        <div class="qr">
-          <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat"
-          />
-          <span>WeChat</span>
-        </div>
-        <div class="qr">
-          <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp"
-          />
-          <span>mini apps</span>
+
+        <div class="v-line"></div>
+
+        <div class="contact">
+          <p class="no-top-margin">
+            Pattaya：Name : Baidi International (Pattaya) Real Estate Asset
+            Management Co.,Ltd No.388/237 Moo.10 Nongprue, Banglamung, Chonburi
+            Province 20150
+          </p>
+          <p class="float-bottom">
+            Mail：support@bighousekeeper.cn
+          </p>
         </div>
       </div>
-    </div>
 
-    <div class="line" style="margin-top: 22px; margin-bottom: 26px;"></div>
+      <div class="line"></div>
 
-    <!-- COPYRIGHT -->
-    <div class="copyright">
-      © 2024 Big Housekeeper - All rights reserved - Webmaster by
-      bighousekeeper.cn
+      <div class="follow-wrap">
+        <div class="follow">
+          <h3 class="no-top-margin">Follow Us</h3>
+          <div class="icons">
+            <img src="/xhs.svg" />
+            <img src="/tiktok.svg" />
+            <img src="/fb.svg" />
+            <img src="/ig.svg" />
+            <img src="/yt.svg" />
+          </div>
+        </div>
+
+        <div class="qr-wrap">
+          <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=service" />
+            <span>service</span>
+          </div>
+          <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=wechat" />
+            <span>WeChat</span>
+          </div>
+          <div class="qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=miniapp" />
+            <span>mini apps</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="copyright">
+        © 2024 Big Housekeeper - All rights reserved - Webmaster by bighousekeeper.cn
+      </div>
+
     </div>
   </footer>
 </template>
+
 
 <script>
 export default {
@@ -96,17 +95,19 @@ export default {
 .footer {
   background: #0b4fb3;
   color: #fff;
-  padding: 40px 410px; 
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
-.footer h3 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
 
-.top {                
+/* HEADER */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,8 +120,8 @@ export default {
 }
 
 .logo-img {
-  height: 42px;
   width: 42px;
+  height: 42px;
 }
 
 .logo-text {
@@ -130,37 +131,28 @@ export default {
 
 .menu {
   display: flex;
-  justify-content: space-between;
+  gap: 32px;
   font-size: 18px;
-  margin: 33px 0;
 }
 
-/* LINE */
 .line {
   height: 1px;
   background: rgba(255, 255, 255, 0.35);
-  margin: 33px 0 24px 0;
+  margin: 33px 0 24px;
 }
 
 /* CONTACT */
 .contact-wrap {
   display: flex;
   gap: 40px;
-  align-items: stretch;
 }
 
 .contact {
   flex: 1;
   font-size: 14px;
-  line-height: 204%;
+  line-height: 2;
   display: flex;
   flex-direction: column;
-  max-height: 160px;
-}
-
-.contact h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 
 .v-line {
@@ -175,11 +167,6 @@ export default {
   align-items: flex-start;
 }
 
-.follow h3 {
-  font-size: 16px;
-  margin-bottom: 600;
-}
-
 .icons {
   display: flex;
   gap: 43px;
@@ -187,22 +174,8 @@ export default {
 }
 
 .icons img {
-  width: auto; 
   height: 42px;
-  object-fit: contain;
-  border-radius: 8px;
   cursor: pointer;
-}
-
-.icons i {
-  width: 46px;
-  height: 46px;
-  background: #fff;
-  color: #0b4fb3;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* QR */
@@ -213,13 +186,12 @@ export default {
 
 .qr {
   text-align: center;
-
 }
 
 .qr img {
-  background: #fff;
-  width:  130px;
+  width: 130px;
   height: 130px;
+  background: #fff;
   padding: 6px;
   border-radius: 14px;
 }
@@ -230,41 +202,106 @@ export default {
   font-size: 12px;
 }
 
-/* COPYRIGHT */
 .copyright {
   font-size: 12px;
   opacity: 0.7;
 }
 
+/* UTIL */
 .float-bottom {
   margin-top: auto;
-  margin-bottom: 0;
 }
 
-.no-top-margin{
+.no-top-margin {
   margin-top: 0;
 }
 
-/* MOBILE */
+
+/* iPad */
+@media (max-width: 1024px) {
+  .footer-inner {
+    padding: 40px 60px;
+  }
+
+  .menu {
+    font-size: 16px;
+    gap: 24px;
+  }
+
+  .icons {
+    gap: 28px;
+  }
+
+  .qr-wrap {
+    gap: 40px;
+  }
+
+  .qr img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  .top,
-  .contact-wrap,
-  .follow-wrap {
+  .footer-inner {
+    padding: 32px 20px;
+  }
+
+  .header {
     flex-direction: column;
     gap: 20px;
   }
 
+  .logo-text {
+    font-size: 22px;
+  }
+
   .menu {
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    gap: 16px;
+  }
+
+  .contact-wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .v-line {
+    display: none;
+  }
+
+  .follow-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .icons {
+    justify-content: center;
+    margin-top: 20px;
+    gap: 24px;
+  }
+
+  .icons img {
+    height: 32px;
   }
 
   .qr-wrap {
-    justify-content: center;
+    gap: 24px;
+  }
+
+  .qr img {
+    width: 90px;
+    height: 90px;
   }
 
   .copyright {
     text-align: center;
+    line-height: 1.6;
   }
 }
+
 </style>

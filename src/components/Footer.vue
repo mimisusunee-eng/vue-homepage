@@ -105,18 +105,17 @@ export default {
   font-family: "Comfortaa", "Prompt", sans-serif;
 }
 
-
-/* HEADER */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
 }
 
 .logo-box {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 24px;
 }
 
 .logo-img {
@@ -130,15 +129,31 @@ export default {
 }
 
 .menu {
-  display: flex;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   font-size: 18px;
+  margin-top: 6px;   
 }
+
+
+.menu span:nth-child(1) {
+  justify-self: start;   
+}
+
+.menu span:nth-child(2) {
+  justify-self: center;  
+}
+
+.menu span:nth-child(3) {
+  justify-self: end;     
+}
+
 
 .line {
   height: 1px;
   background: rgba(255, 255, 255, 0.35);
-  margin: 33px 0 24px;
+  margin: 20px 0 24px;
 }
 
 /* CONTACT */
@@ -249,6 +264,7 @@ export default {
   }
 
   .header {
+    display: flex;
     flex-direction: column;
     gap: 20px;
   }
@@ -257,12 +273,14 @@ export default {
     font-size: 22px;
   }
 
+ @media (max-width: 768px) {
   .menu {
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    font-size: 14px;
     gap: 16px;
+    font-size: 14px;
   }
+}
 
   .contact-wrap {
     flex-direction: column;

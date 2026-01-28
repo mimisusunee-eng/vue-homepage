@@ -54,7 +54,7 @@
 .help-card {
   background: #F1F4F9;
   border-radius: 16px;
-  padding: 0px 5px;
+  padding: 24px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -83,22 +83,22 @@
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 21px */
+   margin-top: -25px;
 }
 
 
 /* Tablet */
 @media (max-width: 1023px) {
-  :deep(.help-section) {
+  .help-section {
     padding: 40px 24px;
   }
-}
+ }
 
 /* Mobile */
 @media (max-width: 767px) {
-  :deep(.help-section) {
+  .help-section {
     padding: 32px 16px;
   }
-}
 
   .cards {
     grid-template-columns: 1fr;
@@ -108,5 +108,5 @@
     flex-direction: column;
     text-align: center;
   }
-
+}
 </style>

@@ -1,33 +1,32 @@
 <template>
-  <div id="app">
-    <Header />
+  <component :is="layout">
     <router-view />
-    <Footer />
-  </div>
+  </component>
 </template>
 
-
 <script setup>
-import Header from './components/Header.vue'
-import Home from './pages/Home.vue'
-import Footer from './components/Footer.vue'
-import PropertySection from './components/PropertySection.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
+import MainLayout from './layouts/MainLayout.vue'
+import AuthLayout from './layouts/AuthLayout.vue'
+
+const route = useRoute()
+
+const layout = computed(() => {
+  return route.meta.layout === 'auth'
+    ? AuthLayout
+    : MainLayout
+})
 </script>
 
 <style>
-  html, body {
+html, body {
   margin: 0;
   padding: 0;
 }
 
-#app {
-  overflow-x: hidden;
-}
-
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 </style>

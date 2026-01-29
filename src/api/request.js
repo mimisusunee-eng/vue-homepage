@@ -1,17 +1,8 @@
-import api from "./index";
+import axios from 'axios'
 
-export const get = (url, params = {}) => {
-  return api.get(url, { params });
-};
+const request = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com',
+  timeout: 5000,
+})
 
-export const post = (url, data = {}) => {
-  return api.post(url, data);
-};
-
-export const put = (url, data = {}) => {
-  return api.put(url, data);
-};
-
-export const del = (url) => {
-  return api.delete(url);
-};
+export default request

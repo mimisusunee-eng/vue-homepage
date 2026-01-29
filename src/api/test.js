@@ -1,3 +1,6 @@
-import { get } from "./request";
+import api from './index'
 
-export const getToDo = () => get("/todos/1");
+export const getTodos = async () => {
+  const res = await api.get('/todos')
+  return res
+}

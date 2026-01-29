@@ -11,7 +11,7 @@ export default {
   homeServices: 'บริการบ้าน',
   sell: 'ขาย',
   login: 'เข้าสู่ระบบ',
-  Buy: 'ซื้อ' ,
-  Land: 'ที่ดิน' ,
+  buy: 'ซื้อ' ,
+  land: 'ที่ดิน' ,
   handpickedProperties: 'อสังหาคัดพิเศษ'
 }

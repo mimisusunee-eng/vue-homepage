@@ -12,6 +12,6 @@ export default {
   sell: 'Sell',
   login: 'Login',
   buy: 'Buy',
-  Land: 'Land',
+  land: 'Land',
   handpickedProperties: 'Handpicked properties'
 }

@@ -156,7 +156,6 @@ export default {
   margin: 20px 0 24px;
 }
 
-/* CONTACT */
 .contact-wrap {
   display: flex;
   gap: 40px;
@@ -175,7 +174,6 @@ export default {
   background: rgba(255, 255, 255, 0.4);
 }
 
-/* FOLLOW */
 .follow-wrap {
   display: flex;
   justify-content: space-between;

@@ -1,17 +1,22 @@
 <template>
   <header class="header">
     <nav class="nav">
-      <!-- LEFT : Logo -->
-      <div class="logo-title">
-        <img src="/logo.png" alt="Logo" class="logo" />
-        <h1 class="brand">BIG HOUSEKEEPER</h1>
-      </div>
 
-      <!-- CENTER : Menu (Desktop / iPad) -->
+      <router-link to="/" class="logo-title">
+         <img src="/logo.png" class="logo" />
+         <h1 class="brand">BIG HOUSEKEEPER</h1>
+      </router-link>
+
+
       <div class="menu">
-        <button v-for="item in menus" :key="item">
-          {{ $t(item) }}
+        <button
+           v-for="item in menus"
+           :key="item.path"
+           @click="goPage(item.path)"
+        >
+          {{ $t(item.label) }}
         </button>
+
       </div>
 
       <!-- RIGHT : Language + Login + Hamburger -->
@@ -50,9 +55,14 @@
 
     <!-- Mobile Menu -->
     <ul v-if="menuOpen" class="mobile-menu">
-      <li v-for="item in menus" :key="item">
-        {{ $t(item) }}
-      </li>
+      <li
+        v-for="item in menus"
+        :key="item.path"
+        @click="goPage(item.path)"
+    >
+       {{ $t(item.label) }}
+    </li>
+
     </ul>
   </header>
 </template>
@@ -60,17 +70,20 @@
 <script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+
 
 const { locale } = useI18n()
+const   router  = useRouter()
 
 const menus = [
-  'buy',
-  'Land',
-  'rent',
-  'commercial',
-  'project',
-  'homeServices',
-  'sell'
+  { label: 'buy', path: '/buy' },
+  { label: 'land', path: '/land' },
+  { label: 'rent', path: '/rent' },
+  { label: 'project', path: '/project' },
+  { label: 'commercial', path: '/commercial' },
+  { label: 'homeServices', path: '/home-services' },
+  { label: 'sell', path: '/sell' }
 ]
 
 /* language */
@@ -92,6 +105,10 @@ const changeLang = (lang) => {
   currentLang.value = lang
   locale.value = lang.code
   langOpen.value = false
+}
+
+const goPage = (path) => {
+  router.push(path)
 }
 </script>
 
@@ -119,6 +136,7 @@ const changeLang = (lang) => {
   display: flex;
   align-items: center;
   gap: 14px;
+  text-decoration: none;
 }
 
 .logo {
@@ -155,7 +173,7 @@ const changeLang = (lang) => {
       bottom: -6px;
       width: 0;
       height: 4px;
-      background: #1e6685;
+      background: #1E6685;
       transition: width 0.25s;
       border-radius: 20%;
     }
@@ -173,7 +191,6 @@ const changeLang = (lang) => {
   gap: 12px;
 }
 
-/* language */
 .lang-wrapper {
   position: relative;
   color: #4B5053;
@@ -202,7 +219,6 @@ const changeLang = (lang) => {
   width: 12px;
 }
 
-/* dropdown */
 .lang-dropdown {
   position: absolute;
   top: 110%;
@@ -227,7 +243,6 @@ const changeLang = (lang) => {
   background: #D9D9D980;
 }
 
-/* login */
 .login {
   padding: 8px 18px;
   background: #004aad;
@@ -237,7 +252,6 @@ const changeLang = (lang) => {
   cursor: pointer;
 }
 
-/* hamburger */
 .hamburger {
   display: none;
   font-size: 26px;
@@ -350,7 +364,7 @@ const changeLang = (lang) => {
     transition: color 0.25s ease;
   }
 
-  /* เส้นใต้ (เหมือน desktop) */
+  /* เส้นใต้เหมือน desktop */
   .mobile-menu li::after {
     content: '';
     position: absolute;

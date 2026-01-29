@@ -220,19 +220,21 @@ const selectLocation = (location) => {
 }
 
 
-/* ================= iPad ================= */
+/*  iPad */
 @media (max-width: 1024px) {
 
   .hero {
-    height: 600px;
+    height: 460px;                    
+    background-position: center top;  
   }
 
   .search-box {
-    width: 90%;
-    height: 80px;
+    width: 80%;
+    height: 42px;
     padding: 8px 12px;
     gap: 8px;
     bottom: -24px;
+    min-height: 76px;
   }
 
   .location {
@@ -249,47 +251,61 @@ const selectLocation = (location) => {
   }
 
   .search-box button {
+    height: 44px;
     font-size: 20px;
     padding: 10px 20px;
   }
+
+  .dropdown {
+    width: 180px;                  
+    border-radius: 12px;
+    padding: 4px 0;
+  }
+
+  .dropdown li {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
 
   .arrow img {
     width: 18px;
     height: auto;
     transform: translateY(-30%);
   }
-}
 
-/* ================= iPhone ================= */
+
+/*  iPhone  */
 @media (max-width: 767px) {
 
   .hero {
-    height: 520px;
+    height: 360px;                    
+    background-position: center top;  
   }
 
   .search-box {
-    width: 92%;
+    width: 86%;
     height: auto;
     flex-direction: column;
-    border-radius: 24px;
-    gap: 10px;
+    border-radius:14px;
+    gap: 6px;
     padding: 12px;
-    bottom: -40px;
+    bottom: 10px;
   }
 
   .location {
     width: 100%;
-    font-size: 18px;
+    font-size: 16px;
     justify-content: space-between;
     border-right: none;
     border-bottom: 1px solid #e5e7eb;
-    padding: 10px 14px;
+    padding: 8px 12px;
   }
 
   .search-box input {
     width: 100%;
-    font-size: 18px;
-    padding: 10px 14px;
+    font-size: 16px;
+    padding: 8px 12px;
   }
 
   .search-box input::placeholder {
@@ -298,13 +314,23 @@ const selectLocation = (location) => {
 
   .search-box button {
     width: 100%;
-    font-size: 20px;
-    padding: 12px;
+    font-size: 16px;
+    padding: 12px 0;
+    height: 36px;
   }
 
-  .dropdown {
+ .dropdown {
     width: 100%;
+    padding: 4px 0;         
+    border-radius: 14px;    
+    top: 110%;              
   }
+
+  .dropdown li {
+    font-size: 15px;        
+    padding: 8px 12px;       
+  }
+
 }
 
 

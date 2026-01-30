@@ -19,7 +19,7 @@ export const useUserStore = defineStore('user', {
       this.error = null
 
       try {
-        // 🔴 MOCK (พร้อมเปลี่ยนเป็น API จริง)
+        // MOCK (พร้อมเปลี่ยนเป็น API จริง)
         if (email === 'test@test.com' && password === '123456') {
           const fakeToken = 'jwt-token-example'
 

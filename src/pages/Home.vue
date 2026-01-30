@@ -2,21 +2,6 @@
   <div>
     <Hero />
 
-    <!-- loading -->
-    <p v-if="propertyStore.loading">⏳ กำลังโหลดข้อมูลบ้าน...</p>
-
-    <!-- list -->
-    <div v-else>
-      <div
-        v-for="item in propertyStore.list"
-        :key="item.id"
-        class="box"
-      >
-        <b>{{ item.name }}</b>
-        <div>ราคา {{ item.price }} บาท</div>
-      </div>
-    </div>
-
     <PropertySection :title="$t('newProjects')" />
     <PropertySection :title="$t('handpickedProperties')" />
     <PropertySection :title="$t('rentAHouse')" />
@@ -26,23 +11,20 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-
+import { onMounted } from 'vue'   
 import Hero from '../components/Hero.vue'
 import PropertySection from '../components/PropertySection.vue'
 import HelpCenter from '../components/HelpCenter.vue'
+import { useTodoStore } from '@/store/todo'
 
-import { useUserStore } from '../store/user'
-import { usePropertyStore } from '../store/property'
-
-const userStore = useUserStore()
-const propertyStore = usePropertyStore()
+const todoStore = useTodoStore()
 
 onMounted(() => {
-  userStore.fetchTodos()
-  propertyStore.fetchProperties()
+  todoStore.fetchTodos()
 })
 </script>
+
+
 
 
 <style scoped>

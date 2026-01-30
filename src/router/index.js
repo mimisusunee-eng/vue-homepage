@@ -1,39 +1,39 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useUserStore } from '../store/user'
+import { useUserStore } from '@/store/user'
 
 const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../pages/login.vue'),
+    component: () => import('@/pages/login.vue'),
     meta: { layout: 'auth' },
   },
 
   {
     path: '/',
     name: 'Home',
-    component: () => import('../pages/Home.vue'),
-    meta: { auth: true, layout: 'main' },
+    component: () => import('@/pages/Home.vue'),
+    meta: { layout: 'main' },
   },
 
   {
     path: '/buy',
     name: 'Buy',
-    component: () => import('../views/Buy.vue'),
+    component: () => import('@/views/Buy.vue'),
     meta: { auth: true, layout: 'main' },
   },
 
   {
     path: '/land',
     name: 'Land',
-    component: () => import('../views/Land.vue'),
+    component: () => import('@/views/Land.vue'),
     meta: { auth: true, layout: 'main' },
   },
 
   {
     path: '/rent',
     name: 'Rent',
-    component: () => import('../views/Rent.vue'),
+    component: () => import('@/views/Rent.vue'),
     meta: { auth: true, layout: 'main' },
   },
 ]

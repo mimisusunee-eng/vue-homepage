@@ -68,10 +68,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
+
+onMounted(() => {
+  console.log(' Header mounted')
+})
 
 const { locale } = useI18n()
 const   router  = useRouter()
@@ -80,6 +84,8 @@ const menus = [
   { label: 'buy', path: '/buy' },
   { label: 'land', path: '/land' },
   { label: 'rent', path: '/rent' },
+  
+  // ยังไม่ทำ → ชี้กลับ home
   { label: 'project', path: '/project' },
   { label: 'commercial', path: '/commercial' },
   { label: 'homeServices', path: '/home-services' },

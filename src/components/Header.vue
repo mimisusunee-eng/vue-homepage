@@ -41,10 +41,10 @@
           </ul>
         </div>
 
-        <!-- Login -->
-        <button class="login">
+        <button class="login" @click="goLogin">
           {{ $t('login') }}
         </button>
+
 
         <!-- Hamburger (Mobile) -->
         <button class="hamburger" @click="menuOpen = !menuOpen">
@@ -71,14 +71,20 @@
 import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
+import { useUserStore } from '@/store/user'
 
 
 onMounted(() => {
   console.log(' Header mounted')
 })
 
+const goLogin = () => {
+  router.push('/login')
+}
+
 const { locale } = useI18n()
 const   router  = useRouter()
+const userStore = useUserStore()
 
 const menus = [
   { label: 'buy', path: '/buy' },
@@ -106,6 +112,7 @@ const currentLang = ref(languages[0])
 const toggleLang = () => {
   langOpen.value = !langOpen.value
 }
+
 
 const changeLang = (lang) => {
   currentLang.value = lang

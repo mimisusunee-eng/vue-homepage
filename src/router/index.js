@@ -20,22 +20,32 @@ const routes = [
     path: '/buy',
     name: 'Buy',
     component: () => import('@/views/Buy.vue'),
-    meta: { auth: true, layout: 'main' },
   },
 
   {
     path: '/land',
     name: 'Land',
     component: () => import('@/views/Land.vue'),
-    meta: { auth: true, layout: 'main' },
   },
 
   {
     path: '/rent',
     name: 'Rent',
     component: () => import('@/views/Rent.vue'),
-    meta: { auth: true, layout: 'main' },
   },
+
+{
+  path: '/todo/:id',
+  name: 'TodoDetail',
+  component: () => import('@/pages/TodoDetail.vue'),
+},
+
+{
+  path: '/learn/todo',
+  name: 'LearnTodo',
+  component: () => import('@/pages/LearnTodo.vue'),
+}
+
 ]
 
 const router = createRouter({
@@ -43,12 +53,14 @@ const router = createRouter({
   routes,
 })
 
-router.beforeEach((to) => {
-  const userStore = useUserStore()
+//router.beforeEach((to) => {
+//  const userStore = useUserStore()
 
-  if (to.meta.auth && !userStore.token) {
-    return '/login'
-  }
-})
+//  if (to.meta.auth && !userStore.token) {
+//    return '/login'
+//  }
+
+  
+//})
 
 export default router

@@ -1,37 +1,24 @@
-<template>
-  <div>
-    <Hero />
-
-    <PropertySection :title="$t('newProjects')" />
-    <PropertySection :title="$t('handpickedProperties')" />
-    <PropertySection :title="$t('rentAHouse')" />
-
-    <HelpCenter />
-  </div>
-</template>
-
 <script setup>
-import { onMounted } from 'vue'   
+import { onMounted, ref, computed } from 'vue'
 import Hero from '../components/Hero.vue'
 import PropertySection from '../components/PropertySection.vue'
 import HelpCenter from '../components/HelpCenter.vue'
-import { useTodoStore } from '@/store/todo'
+import { getNewProjects, getHandpickedProjects } from '../api/home'
 
-const todoStore = useTodoStore()
+const newProjects = ref([])
 
-onMounted(() => {
-  todoStore.fetchTodos()
+const newProjects8 = computed(() =>
+  newProjects.value.slice(0, 8)
+)
+
+onMounted(async () => {
+  newProjects.value = await getNewProjects()
 })
 </script>
 
-
-
-
-<style scoped>
-.box {
-  margin: 12px 0;
-  padding: 12px;
-  background: #f2f4ff;
-  border-radius: 8px;
-}
-</style>
+<template>
+  <PropertySection
+    title="New Projects"
+    :list="newProjects8"
+  />
+</template>

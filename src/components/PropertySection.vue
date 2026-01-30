@@ -10,18 +10,24 @@
     </div>
 
     <div class="grid">
-      <PropertyCard v-for="n in 8" :key="n" />
+     <PropertyCard v-for="item in list" :key="item.id" :data="item" />
     </div>
   </section>
 </template>
 
 <script setup>
-import PropertyCard from "./PropertyCard.vue";
+import PropertyCard from './PropertyCard.vue'
 
 defineProps({
   title: String,
-});
+  list: {
+    type: Array,
+    required: true,
+  },
+})
 </script>
+
+
 
 <style scoped>
 .section {

@@ -3,22 +3,39 @@ import { onMounted, ref, computed } from 'vue'
 import Hero from '../components/Hero.vue'
 import PropertySection from '../components/PropertySection.vue'
 import HelpCenter from '../components/HelpCenter.vue'
-import { getNewProjects, getHandpickedProjects } from '../api/home'
+import { getNewProjects } from '../api/home'
 
 const newProjects = ref([])
 
-const newProjects8 = computed(() =>
+const projects8 = computed(() =>
   newProjects.value.slice(0, 8)
 )
 
 onMounted(async () => {
-  newProjects.value = await getNewProjects()
+ newProjects.value = await getNewProjects()
 })
 </script>
 
 <template>
-  <PropertySection
-    title="New Projects"
-    :list="newProjects8"
-  />
+  <div class="home">
+    <Hero />
+
+    <PropertySection
+      title="New Projects"
+      :list="projects8"
+    />
+
+    <PropertySection
+      title="Handpicked properties"
+      :list="projects8"
+    />
+
+    <PropertySection
+      title="Rent a house"
+      :list="projects8"
+    />
+
+    <HelpCenter />
+  </div>
 </template>
+

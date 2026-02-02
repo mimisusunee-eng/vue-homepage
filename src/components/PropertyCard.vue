@@ -180,7 +180,7 @@ defineProps({
   margin-top: 20px;        
 }
 
-/* ================= iPad ================= */
+/*  iPad  */
 @media (max-width: 1024px) {
 
   .image-wrap {
@@ -217,7 +217,7 @@ defineProps({
   }
 }
 
-/* ================= iPhone ================= */
+/*  iPhone  */
 @media (max-width: 767px) {
 
   .card {

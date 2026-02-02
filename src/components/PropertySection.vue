@@ -10,7 +10,7 @@
     </div>
 
     <div class="grid">
-     <PropertyCard v-for="item in list" :key="item.id" :data="item" />
+     <PropertyCard v-for="item in list" :key="item.id" :item="item" />
     </div>
   </section>
 </template>

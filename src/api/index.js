@@ -15,11 +15,15 @@ api.interceptors.request.use((config) => {
   const userStore = useUserStore()
 
   if (userStore.token) {
+     config.headers = config.headers || {}
     config.headers.Authorization = `Bearer ${userStore.token}`
   }
 
   return config
-})
+},
+  (error) => Promise.reject(error),
+)
+
 
 api.interceptors.response.use(
   (response) => response.data,

@@ -1,40 +1,44 @@
 <template>
   <div class="login-page">
     <div class="login-card">
-      <h2>เข้าสู่ระบบ</h2>
+      <h2>{{ isRegister ? 'สมัครสมาชิก' : 'เข้าสู่ระบบ' }}</h2>
+      <p class="subtitle">
+        {{ isRegister ? 'สร้างบัญชีเพื่อเริ่มต้นใช้งาน' : 'ยินดีต้อนรับกลับมา' }}
+      </p>
 
-      <form @submit.prevent="handleLogin">
-        <!-- Email -->
-        <div class="form-group">
-          <label>Email</label>
-          <input
-            v-model="email"
-            type="email"
-            placeholder="example@email.com"
-          />
-          <p v-if="errors.email" class="error">{{ errors.email }}</p>
+      <div v-if="userStore.error" class="server-error">
+        {{ userStore.error }}
+      </div>
+
+      <form @submit.prevent="handleSubmit">
+        <!-- name (เฉพาะสมัคร) -->
+        <div class="form-group" v-if="isRegister">
+          <label>ชื่อผู้ใช้งาน</label>
+          <input v-model="name" type="text" required />
         </div>
 
-        <!-- Password -->
         <div class="form-group">
-          <label>Password</label>
-          <input
-            v-model="password"
-            type="password"
-            placeholder="••••••••"
-          />
-          <p v-if="errors.password" class="error">{{ errors.password }}</p>
+          <label>อีเมล</label>
+          <input v-model="email" type="email" required />
         </div>
 
-        <!-- Error from server -->
-        <p v-if="loginError" class="error center">
-          {{ loginError }}
-        </p>
+        <div class="form-group">
+          <label>รหัสผ่าน</label>
+          <input v-model="password" type="password" required />
+        </div>
 
-        <button type="submit" :disabled="loading">
-          {{ loading ? 'กำลังเข้าสู่ระบบ...' : 'Login' }}
+        <button class="primary" type="submit" :disabled="userStore.loading">
+          {{ isRegister ? 'สมัครสมาชิก' : 'เข้าสู่ระบบ' }}
         </button>
       </form>
+
+      <button class="secondary" @click="toggleMode">
+        {{ isRegister ? 'มีบัญชีแล้ว? เข้าสู่ระบบ' : 'ยังไม่มีบัญชี? สมัครสมาชิก' }}
+      </button>
+
+      <button class="back-home" @click="goHome">
+          ← กลับหน้าแรก
+      </button>
     </div>
   </div>
 </template>
@@ -42,106 +46,131 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useUserStore } from '../store/user'
+import { useUserStore } from '@/store/user'
 
 const router = useRouter()
 const userStore = useUserStore()
 
+const isRegister = ref(false)
 const email = ref('')
 const password = ref('')
-const loading = ref(false)
-const loginError = ref('')
+const name = ref('')
 
-const errors = ref({
-  email: '',
-  password: '',
-})
-
-const validate = () => {
-  errors.value = { email: '', password: '' }
-  let valid = true
-
-  if (!email.value) {
-    errors.value.email = 'กรุณากรอก email'
-    valid = false
-  }
-
-  if (!password.value) {
-    errors.value.password = 'กรุณากรอก password'
-    valid = false
-  } else if (password.value.length < 6) {
-    errors.value.password = 'รหัสผ่านต้องอย่างน้อย 6 ตัว'
-    valid = false
-  }
-
-  return valid
+const toggleMode = () => {
+  isRegister.value = !isRegister.value
+  userStore.error = null
 }
 
-const handleLogin = async () => {
-  loginError.value = ''
+const goHome = () => {
+  router.push('/')
+}
 
-  if (!validate()) return
-
+const handleSubmit = async () => {
   try {
-    loading.value = true
-    await userStore.login(email.value, password.value)
+    if (isRegister.value) {
+      await userStore.register({
+        email: email.value,
+        password: password.value,
+        name: name.value,
+      })
+    } else {
+      await userStore.login(email.value, password.value)
+    }
+
     router.push('/')
-  } catch (err) {
-    loginError.value = 'Email หรือ Password ไม่ถูกต้อง'
-  } finally {
-    loading.value = false
+  } catch (e) {
+    console.log(e)
   }
 }
 </script>
 
 <style scoped>
+/* 👉 ใช้ CSS เดิมของคนสวยได้เลย ไม่ต้องเปลี่ยน */
 .login-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  font-size: 24px;
   align-items: center;
-  background: linear-gradient(135deg, #6b73ff, #000dff);
+  background: linear-gradient(135deg, #e6f0ff, #cfe0ff);
+  font-family: 'Comfortaa', sans-serif;
 }
 
 .login-card {
-  background: #fff;
-  padding: 32px;
-  border-radius: 12px;
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 18px;
   width: 360px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba(0, 74, 173, 0.18);
 }
 
 .login-card h2 {
   text-align: center;
-  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #004aad;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 28px;
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 label {
-  display: block;
-  margin-bottom: 6px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #004aad;
+  box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.15);
 }
 
 button {
   width: 100%;
   padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #4f46e5;
-  color: white;
-  font-size: 16px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.25s;
+}
+
+button.primary {
+  background: #004aad;
+  color: white;
+  border: none;
+  margin-top: 8px;
+}
+
+button.primary:hover {
+  background: #003a8c;
+}
+
+button.secondary {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid #004aad;
+  color: #004aad;
+}
+
+button.secondary:hover {
+  background: #e6f0ff;
 }
 
 button:disabled {
@@ -149,15 +178,28 @@ button:disabled {
   cursor: not-allowed;
 }
 
-.error {
-  color: #e11d48;
+.server-error {
+  background: #e6f0ff;
+  color: #003a8c;
+  padding: 10px;
+  border-radius: 8px;
   font-size: 13px;
-  margin-top: 4px;
-}
-
-.center {
+  margin-bottom: 16px;
   text-align: center;
-  margin-bottom: 12px;
 }
-</style>
 
+button.back-home {
+  margin-top: 16px;
+  background: transparent;
+  border: none;
+  color: #004aad;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button.back-home:hover {
+  color: #003a8c;
+}
+
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="goDetail">
     <!-- Image zone -->
     <div class="image-wrap">
       <img src="/house.png" alt="property" />
@@ -29,6 +29,8 @@
     2
   </span>
 
+
+  
   <span class="meta-item">
     <img src="/land.svg" class="meta" />
     457m²
@@ -44,13 +46,22 @@
 
 
 <script setup>
-defineProps({
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const props = defineProps({
   item: {
     type: Object,
     required: true,
   },
 })
+
+const goDetail = () => {
+  router.push(`/property/${props.item.id}`)
+}
 </script>
+
 
 
 

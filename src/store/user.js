@@ -43,6 +43,31 @@ export const useUserStore = defineStore('user', {
       }
     },
 
+     async register({ email, password, name }) {
+    this.loading = true
+    this.error = null
+
+    try {
+      
+      const fakeToken = 'register-token'
+
+      this.token = fakeToken
+      this.user = {
+        email,
+        name,
+      }
+
+      localStorage.setItem('token', fakeToken)
+      localStorage.setItem('user', JSON.stringify(this.user))
+      return true
+    } catch (err) {
+      this.error = err.message
+      throw err
+    } finally {
+      this.loading = false
+    }
+  },
+
     logout() {
       this.token = ''
       this.user = null

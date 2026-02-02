@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/head": "^2.0.0",
     "axios": "^1.13.4",
     "pinia": "^3.0.4",
     "postcss-pxtorem": "^6.1.0",

@@ -1,42 +1,44 @@
 <template>
   <div
-    v-if="item && item.id"
+    v-if="item && (item.id !== undefined || item.houseId !== undefined)"
     class="card"
     @click="goDetail"
   >
     <div class="image-wrap">
-      <img src="/house.png" alt="property" />
+      <img :src="item.image || '/house.png'" alt="property" />
 
-      <span class="tag">apartment</span>
-      <span class="code">ID: {{ item.id }}</span>
+      <span class="tag">{{ item.type || 'apartment' }}</span>
+      <span class="code">ID: {{ item.id || item.houseId }}</span>
     </div>
 
     <div class="content">
-      <h3 class="title">{{ item.title || 'No title' }}</h3>
+      <h3 class="title">{{ item.title || item.houseName || 'No title' }}</h3>
 
       <div class="location">
         <img src="/gps.svg" alt="location" />
-        <span class="text">Mock location</span>
+        <span class="text">{{ item.location || 'Unknown location' }}</span>
       </div>
 
       <div class="meta">
         <span class="meta-item">
           <img src="/bed.svg" />
-          4
+          {{ item.bedroom ?? 0 }}
         </span>
 
         <span class="meta-item">
           <img src="/shower.svg" />
-          2
+          {{ item.bathroom ?? 0 }}
         </span>
 
         <span class="meta-item">
           <img src="/land.svg" />
-          457m²
+          {{ item.area ?? '-' }} m²
         </span>
       </div>
 
-      <div class="price">฿ {{ item.id * 10000 }}</div>
+      <div class="price">
+        ฿ {{ item.price ?? '-' }}
+      </div>
     </div>
   </div>
 </template>
@@ -54,9 +56,15 @@ const props = defineProps({
 })
 
 const goDetail = () => {
-  if (!props.item?.id) return
-  router.push(`/property/${props.item.id}`)
+  const id = props.item.id ?? props.item.houseId
+  if (!id) return
+
+  router.push({
+    name: 'PropertyDetail',
+    params: { id },
+  })
 }
+
 </script>
 
 <style scoped>

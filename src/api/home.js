@@ -1,25 +1,13 @@
-import api from './index'
+import axios from 'axios'
 
-export const getNewProjects = () => {
-  return api.get('/posts')
+const api = axios.create({
+  baseURL: 'http://localhost:3000',
+})
+
+export function getHouseList() {
+  return api.get('/miniprogram/house/getHouseList')
 }
 
-export const getHandpickedProjects = () => {
-  return api.get('/posts')
+export function getHouseDetail(id) {
+  return api.get(`/miniprogram/rent/detail?id=${id}`)
 }
-
-export const getRentHouses = () => {
-  return api.get('/posts')
-}
-
-export const getPropertyDetail = async (id) => {
-  try {
-    return await api.get(`/posts/${id}`)
-  } catch (error) {
-    if (error.response?.status === 404) {
-      return null
-    }
-    throw error
-  }
-}
-

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useUserStore } from '@/store/user'
-
+import PropertyDetail from '@/views/PropertyDetail.vue'
 
 const routes = [
   {
@@ -22,19 +22,17 @@ const routes = [
 },
 
 
-   {
-    path: '/property/:id',
-    name: 'PropertyDetail',
-    component: () => import('@/views/PropertyDetail.vue'),
-    meta: {
-      title: 'รายละเอียดอสังหาริมทรัพย์ | Big Housekeeper',
-      description: 'ดูรายละเอียดบ้าน คอนโด และที่ดิน',
-    },
-    beforeEnter: (to) => {
-      const id = Number(to.params.id)
-      if (!id) return '/404'
-    },
+{
+  path: '/property/:id',
+  name: 'PropertyDetail',
+  component: () => import('@/views/PropertyDetail.vue'),
+  beforeEnter: (to) => {
+    const id = Number(to.params.id)
+    if (!id) return '/404'
   },
+},
+
+
 
   {
     path: '/buy',

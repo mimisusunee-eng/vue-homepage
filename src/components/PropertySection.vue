@@ -2,15 +2,19 @@
   <section class="section">
     <div class="section-header">
       <h2>{{ title }}</h2>
+
       <div class="more">
         <span>more</span>
-         <div class="arrow-circle"></div>
-         <img src="/arrow1.svg" alt="more" />
+        <img src="/arrow1.svg" alt="more" />
       </div>
     </div>
 
-    <div class="grid">
-     <PropertyCard v-for="item in list" :key="item.id" :item="item" />
+    <div class="grid" v-if="Array.isArray(list) && list.length">
+      <PropertyCard
+        v-for="item in list"
+        :key="item.id"
+        :item="item"
+      />
     </div>
   </section>
 </template>
@@ -26,6 +30,7 @@ defineProps({
   },
 })
 </script>
+
 
 
 <style scoped>

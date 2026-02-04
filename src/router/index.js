@@ -11,13 +11,16 @@ const routes = [
   },
 
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/pages/Home.vue'),
-    meta: { layout: 'main' },
+  path: '/',
+  name: 'Home',
+  component: () => import('@/pages/Home.vue'),
+  meta: {
+    layout: 'main',
     title: 'Big Housekeeper | บ้าน คอนโด ทำเลดี',
-    description: 'รวมบ้าน คอนโด และที่ดินคุณภาพดี ราคาน่าอยู่' 
+    description: 'รวมบ้าน คอนโด และที่ดินคุณภาพดี ราคาน่าอยู่'
   },
+},
+
 
    {
     path: '/property/:id',

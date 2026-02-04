@@ -6,6 +6,8 @@ import PropertySection from '../components/PropertySection.vue'
 import HelpCenter from '../components/HelpCenter.vue'
 import { getNewProjects } from '../api/home'
 
+
+
 useHead({
   title: 'Big Housekeeper | บ้าน คอนโด ที่ดิน ทำเลดี',
   meta: [
@@ -27,20 +29,22 @@ useHead({
 const newProjects = ref([])
 const loading = ref(true)
 
-const projects8 = computed(() =>
-  newProjects.value.slice(0, 8)
-)
+const projects8 = computed(() => {
+  return newProjects.value.slice(0, 8)
+})
 
 onMounted(async () => {
   loading.value = true
   try {
     const res = await getNewProjects()
+
     newProjects.value = res
+  } catch (err) {
+    console.error(err)
   } finally {
     loading.value = false
   }
 })
-
 </script>
 
 <template>

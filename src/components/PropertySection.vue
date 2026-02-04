@@ -22,11 +22,10 @@ defineProps({
   title: String,
   list: {
     type: Array,
-    required: true,
+    default: () => [],
   },
 })
 </script>
-
 
 
 <style scoped>
@@ -86,8 +85,6 @@ defineProps({
   .section {
     padding: 36px 24px 24px;
   }
-
-
 
   .grid {
     grid-template-columns: repeat(2, 1fr);

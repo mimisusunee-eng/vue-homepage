@@ -26,10 +26,6 @@ const routes = [
   path: '/property/:id',
   name: 'PropertyDetail',
   component: () => import('@/views/PropertyDetail.vue'),
-  beforeEnter: (to) => {
-    const id = Number(to.params.id)
-    if (!id) return '/404'
-  },
 },
 
 

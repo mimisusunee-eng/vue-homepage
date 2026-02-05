@@ -1,43 +1,21 @@
 import axios from 'axios'
-import { showFailToast } from 'vant'
-import router from '../router'
-import { useUserStore } from '../store/user'
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+const Request = axios.create({
+  baseURL: 'https://bighousekeeper.cn',
   timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
 })
 
-api.interceptors.request.use(
-  (config) => {
-    const userStore = useUserStore()
+Request.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
 
-    if (userStore.token) {
-      config.headers = config.headers || {}
-      config.headers.Authorization = `Bearer ${userStore.token}`
-    }
-
-    return config
-  },
-  (error) => Promise.reject(error),
+Request.interceptors.response.use(
+  (response) => response.data,
+  (error) => Promise.reject(error)
 )
 
-api.interceptors.response.use(
-  (response) => {
-    return response.data
-  },
-  (error) => {
-    if (error.response?.status === 401) {
-      const userStore = useUserStore()
-      userStore.logout()
-      router.replace('/login')
-      showFailToast('กรุณาเข้าสู่ระบบใหม่')
-    }
-    return Promise.reject(error)
-  },
-)
-
-export default api
+export default Request

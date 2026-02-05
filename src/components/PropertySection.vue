@@ -9,12 +9,20 @@
       </div>
     </div>
 
-    <div class="grid" v-if="Array.isArray(list) && list.length">
-      <PropertyCard
-        v-for="item in list"
-        :key="item.id"
-        :item="item"
-      />
+    <div
+      class="grid"
+      v-if="Array.isArray(list) && list.length"
+    >
+   <PropertyCard
+  v-for="item in list"
+  :key="item.id"
+  :item="item"
+   />
+
+
+    </div>
+
+    <div v-else class="empty">
     </div>
   </section>
 </template>
@@ -29,8 +37,10 @@ defineProps({
     default: () => [],
   },
 })
-</script>
 
+
+
+</script>
 
 
 <style scoped>

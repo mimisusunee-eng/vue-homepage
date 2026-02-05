@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+import { loginApi } from '@/api/user'
 
 export const useUserStore = defineStore('user', {
   state: () => ({
@@ -9,32 +9,27 @@ export const useUserStore = defineStore('user', {
     error: null,
   }),
 
-  getters: {
-    isLogin: (state) => !!state.token,
-  },
-
   actions: {
     async login(email, password) {
       this.loading = true
       this.error = null
 
       try {
-        // MOCK (พร้อมเปลี่ยนเป็น API จริง)
-        if (email === 'test@test.com' && password === '123456') {
-          const fakeToken = 'jwt-token-example'
+        const res = await loginApi({ email, password })
 
-          this.token = fakeToken
-          this.user = {
-            email,
-            name: 'Test User',
-          }
-
-          localStorage.setItem('token', fakeToken)
-          localStorage.setItem('user', JSON.stringify(this.user))
-          return true
+     
+        if (!res.success) {
+          throw new Error(res.message || 'Login failed')
         }
 
-        throw new Error('อีเมลหรือรหัสผ่านไม่ถูกต้อง')
+      
+        this.token = res.data.token
+        this.user = res.data.user || null
+
+        localStorage.setItem('token', this.token)
+        localStorage.setItem('user', JSON.stringify(this.user))
+
+        return true
       } catch (err) {
         this.error = err.message
         throw err
@@ -42,31 +37,6 @@ export const useUserStore = defineStore('user', {
         this.loading = false
       }
     },
-
-     async register({ email, password, name }) {
-    this.loading = true
-    this.error = null
-
-    try {
-      
-      const fakeToken = 'register-token'
-
-      this.token = fakeToken
-      this.user = {
-        email,
-        name,
-      }
-
-      localStorage.setItem('token', fakeToken)
-      localStorage.setItem('user', JSON.stringify(this.user))
-      return true
-    } catch (err) {
-      this.error = err.message
-      throw err
-    } finally {
-      this.loading = false
-    }
-  },
 
     logout() {
       this.token = ''

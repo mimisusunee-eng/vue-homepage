@@ -1,18 +1,14 @@
 <template>
-  <div
-    v-if="item && (item.id !== undefined || item.houseId !== undefined)"
-    class="card"
-    @click="goDetail"
-  >
+  <div class="card" @click="goDetail">
     <div class="image-wrap">
       <img :src="item.image || '/house.png'" alt="property" />
 
       <span class="tag">{{ item.type || 'apartment' }}</span>
-      <span class="code">ID: {{ item.id || item.houseId }}</span>
+      <span class="code">ID: {{ item.id }}</span>
     </div>
 
     <div class="content">
-      <h3 class="title">{{ item.title || item.houseName || 'No title' }}</h3>
+      <h3 class="title">{{ item.title || 'No title' }}</h3>
 
       <div class="location">
         <img src="/gps.svg" alt="location" />
@@ -56,15 +52,13 @@ const props = defineProps({
 })
 
 const goDetail = () => {
-  const id = props.item.id ?? props.item.houseId
-  if (!id) return
+  if (!props.item.id) return
 
   router.push({
     name: 'PropertyDetail',
-    params: { id },
+    params: { id: props.item.id },
   })
 }
-
 </script>
 
 <style scoped>

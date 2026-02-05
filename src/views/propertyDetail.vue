@@ -1,25 +1,21 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import BaseLoading from '@/components/BaseLoading.vue'
+import { GetHouseDetail } from '@/api/home'
 
 const route = useRoute()
-
 const loading = ref(true)
 const detail = ref(null)
 const notFound = ref(false)
 
-
 onMounted(async () => {
   try {
-    const res = await getHouseDetail(route.params.id)
-    const data = res?.data
-    loading.value = false
+    const res = await GetHouseDetail(route.params.id)
 
-    if (!data) {
+    if (!res?.success || !res?.data) {
       notFound.value = true
     } else {
-      detail.value = data
+      detail.value = res.data
     }
   } catch (e) {
     notFound.value = true
@@ -28,6 +24,7 @@ onMounted(async () => {
   }
 })
 </script>
+
 
 <template>
   <BaseLoading v-if="loading" />

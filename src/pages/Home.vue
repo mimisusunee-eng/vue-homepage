@@ -1,76 +1,48 @@
 <script setup>
-import { onMounted, ref, computed } from 'vue'
-
+import { ref, onMounted, computed } from 'vue'
 import Hero from '../components/Hero.vue'
 import PropertySection from '../components/PropertySection.vue'
 import HelpCenter from '../components/HelpCenter.vue'
+import { GetRentHouseList } from '@/api/home'
 
-import { getHouseList } from '@/api/home'
-
-
-const loading = ref(true)
-const newProjects = ref([])
+const list = ref([])
+console.log('UI LIST:', list.value)
 
 onMounted(async () => {
-  try {
-    const res = await getHouseList()
+  const res = await GetRentHouseList({})
 
-    const list = res?.data?.data || []
-    newProjects.value = Array.isArray(list) ? list : []
+  console.log('🔥 FULL RES 👉', res)
 
-    console.log('house list', newProjects.value)
-  } catch (err) {
-    console.error(err)
-  } finally {
-    loading.value = false
+  if (res?.success && Array.isArray(res.data?.list)) {
+    list.value = res.data.list.map(item => ({
+      id: item.house_id,
+      title: item.house_name,
+      price: item.house_price,
+      location: item.city_name,
+      image: item.cover_img,
+      bedroom: item.bedroom,
+      bathroom: item.bathroom,
+      area: item.area,
+      type: item.house_type,
+    }))
   }
 })
 
 
 
-const newProjects8 = computed(() =>
-  Array.isArray(newProjects.value)
-    ? newProjects.value.slice(0, 8)
-    : []
-)
-
-const handpickedProjects8 = computed(() =>
-  Array.isArray(newProjects.value)
-    ? newProjects.value.slice(0, 8)
-    : []
-)
-
-const rentHouses8 = computed(() =>
-  Array.isArray(newProjects.value)
-    ? newProjects.value.slice(0, 8)
-    : []
-)
-
-
+const newProjects8 = computed(() => list.value.slice(0, 8))
+const handpickedProjects8 = computed(() => list.value.slice(0, 8))
+const rentHouses8 = computed(() => list.value.slice(0, 8))
 </script>
-
 
 <template>
   <div class="home">
-
     <Hero />
 
-    <PropertySection
-      title="New Projects"
-      :list="newProjects8"
-    />
-
-    <PropertySection
-      title="Handpicked properties"
-      :list="handpickedProjects8"
-    />
-
-    <PropertySection
-      title="Rent a house"
-      :list="rentHouses8"
-    />
+    <PropertySection title="New Projects" :list="newProjects8" />
+    <PropertySection title="Handpicked properties" :list="handpickedProjects8" />
+    <PropertySection title="Rent a house" :list="rentHouses8" />
 
     <HelpCenter />
-
   </div>
 </template>

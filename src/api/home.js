@@ -1,13 +1,17 @@
-import axios from 'axios'
+import request from '@/utils/request'
 
-const api = axios.create({
-  baseURL: 'http://localhost:3000',
-})
 
-export function getHouseList() {
-  return api.get('/miniprogram/house/getHouseList')
-}
+export const GetHouseList = (data = {}) =>
+  request.post('/miniprogram/house/getHouseList', data)
 
-export function getHouseDetail(id) {
-  return api.get(`/miniprogram/rent/detail?id=${id}`)
-}
+
+export const GetRentHouseList = (data = {}) =>
+  request.post('/miniprogram/rent/getHouseList', data)
+
+export const GetHouseDetail = (id) =>
+  request.post('/miniprogram/house/detail', { id })
+
+
+export const GetRentHouseDetail = (id) =>
+  request.post('/miniprogram/rent/detail', { id })
+

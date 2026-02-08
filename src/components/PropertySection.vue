@@ -1,46 +1,43 @@
 <template>
-  <section class="section">
-    <div class="section-header">
-      <h2>{{ title }}</h2>
+  <section class="section list">
+    <div class="list_title_box">
+      <div class="list_title">{{ title }}</div>
 
-      <div class="more">
+      <div class="list_more">
         <span>more</span>
-        <img src="/arrow1.svg" alt="more" />
+        <div class="more_icon">
+          <img src="/arrow1.svg" />
+        </div>
       </div>
     </div>
 
-    <div
-      class="grid"
-      v-if="Array.isArray(list) && list.length"
-    >
-   <PropertyCard
-  v-for="item in list"
-  :key="item.id"
-  :item="item"
-   />
-
-
-    </div>
-
-    <div v-else class="empty">
+    <div class="list_ul" v-if="list.length">
+      <PropertyCard
+        v-for="item in list"
+        :key="item.post_id || item.id"
+        :item="item"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-import PropertyCard from './PropertyCard.vue'
+import PropertyCard from "./PropertyCard.vue"
 
 defineProps({
   title: String,
-  list: {
-    type: Array,
-    default: () => [],
-  },
+  list: { type: Array, default: () => [] }
 })
-
-
-
 </script>
+
+<style>
+/* NO scoped */
+.section {
+  padding: 60px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+</style>
 
 
 <style scoped>

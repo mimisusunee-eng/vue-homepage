@@ -1,38 +1,49 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
-import Hero from '../components/Hero.vue'
-import PropertySection from '../components/PropertySection.vue'
-import HelpCenter from '../components/HelpCenter.vue'
-import { GetRentHouseList } from '@/api/home'
+import { ref, onMounted, computed } from "vue";
+import Hero from "../components/Hero.vue";
+import PropertySection from "../components/PropertySection.vue";
+import HelpCenter from "../components/HelpCenter.vue";
+import { GetRentHouseList } from "../services/house";
 
-const list = ref([])
-console.log('UI LIST:', list.value)
+const list = ref([]);
+
+// ✅ DEFINE CITY (THIS WAS MISSING)
+const city = ref(localStorage.webCity ? Number(localStorage.webCity) : 39);
+
+const rentList = ref([]);
 
 onMounted(async () => {
-  const res = await GetRentHouseList({})
+  try {
+    const res = await GetRentHouseList({
+      area: 0,
+      bedroom: 0,
+      category: 0,
+      city: city.value,
+      display: 2,
+      district: 0,
+      house_status: 28,
+      keywords: "",
+      page: 1,
+      price: "",
+      size: 8,
+      sort: "",
+      type: 0,
+    });
 
-  console.log('🔥 FULL RES 👉', res)
+    console.log("✅ RENT RAW RESPONSE:", res);
 
-  if (res?.success && Array.isArray(res.data?.list)) {
-    list.value = res.data.list.map(item => ({
-      id: item.house_id,
-      title: item.house_name,
-      price: item.house_price,
-      location: item.city_name,
-      image: item.cover_img,
-      bedroom: item.bedroom,
-      bathroom: item.bathroom,
-      area: item.area,
-      type: item.house_type,
-    }))
+    list.value = res?.data?.house_data || [];
+  } catch (err) {
+    console.error("❌ Rent fetch failed:", err);
   }
-})
 
+  const res = await GetRentHouseList(params);
+  rentList.value = res?.data?.house_data || [];
+});
 
-
-const newProjects8 = computed(() => list.value.slice(0, 8))
-const handpickedProjects8 = computed(() => list.value.slice(0, 8))
-const rentHouses8 = computed(() => list.value.slice(0, 8))
+const newProjects8 = computed(() => list.value.slice(0, 8));
+const handpickedProjects8 = computed(() => list.value.slice(0, 8));
+const rentHouses8 = computed(() => list.value.slice(0, 8));
 </script>
 
 <template>
@@ -40,8 +51,11 @@ const rentHouses8 = computed(() => list.value.slice(0, 8))
     <Hero />
 
     <PropertySection title="New Projects" :list="newProjects8" />
-    <PropertySection title="Handpicked properties" :list="handpickedProjects8" />
-    <PropertySection title="Rent a house" :list="rentHouses8" />
+    <PropertySection
+      title="Handpicked properties"
+      :list="handpickedProjects8"
+    />
+    <PropertySection title="Rent a house" :list="rentList" />
 
     <HelpCenter />
   </div>

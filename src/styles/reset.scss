@@ -1,0 +1,101 @@
+html,
+body {
+	font-family: Comfortaa, "pingfang SC";
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+:root {
+	--el-color-primary: #004aad;
+	--main-color: #004aad;
+	--mainBg-color: #004aad;
+	--fontnormal: 1rem;
+	--el-font-size-base: 1rem;
+	--dgj-font-size-regular: 0.875rem;
+	--dgj-font-size-small: 0.75rem;
+	--dgj-font-size-medium: 1.125rem;
+	--dgj-font-size-msmall: 1rem;
+	--dgj-color-heading1: #313131;
+	--dgj-line-height: 1.2;
+	--dgj-color-highlight: rgba(255, 62, 85, 1);
+	--dgj-font-size-xlarge: 1.5rem;
+	--dgj-color-divider: rgba(219, 219, 219, 1);
+	--dgj-color-subtext: #7f7f7f;
+	--dgj-font-size-large: 1.25rem;
+}
+.inner {
+	width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	@media (max-width: 1100px) {
+		width: 100%;
+		padding-left: 3%;
+		padding-right: 3%;
+		box-sizing: border-box;
+	}
+}
+.v-row {
+	margin: 0;
+}
+[class^="v-col-"] {
+	padding: 0;
+}
+
+@media (max-width: 992px) {
+	.v-col-mdAndDown-12 {
+		max-width: 100%;
+		flex: 0 0 100%;
+	}
+	.mt-mdAndDown-15 {
+		margin-top: 1.75rem;
+	}
+	html,
+	body {
+		font-size: 15px;
+	}
+}
+@media (max-width: 768px) {
+	html,
+	body {
+		font-size: 14px;
+	}
+}
+@media (max-width: 668px) {
+	html,
+	body {
+		font-size: 13px;
+	}
+}
+@media (max-width: 560px) {
+	html,
+	body {
+		font-size: 12px;
+	}
+}
+
+// @media (max-width: 460px) {
+// 	html,
+// 	body {
+// 		font-size: 12px;
+// 	}
+// }
+
+.v-btn--icon.v-btn--size-default {
+	font-size: 18px;
+}
+.mdi:before,
+.mdi-set {
+	font-size: 24px;
+}
+.v-navigation-drawer__scrim {
+	// pointer-events: none;
+	position: fixed;
+}
+.ytp-cued-thumbnail-overlay-image {
+	z-index: 1;
+}

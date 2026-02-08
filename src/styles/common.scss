@@ -1,0 +1,228 @@
+@import url("@/styles/listCard.scss");
+.search_container_list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	min-height: 24px;
+	z-index: 999;
+	$height: 3rem;
+	$fsize: var(--fontnormal);
+	$btnSize: var(--fontnormal);
+	.search_inner {
+		display: flex;
+		justify-content: center;
+		min-height: 24px;
+		width: 100%;
+		align-items: center;
+		box-sizing: border-box;
+		height: 100%;
+		border: 1px solid #7f7f7f4d;
+	}
+	.search_box {
+		$width: 100%;
+		position: relative;
+		min-height: 24px;
+		display: flex;
+		width: $width;
+		&::after {
+			position: absolute;
+			content: "";
+			top: 25%;
+			left: 1.25rem;
+
+			width: 1.5rem;
+			height: 1.5rem;
+
+			background: url("@/assets/buy/list_ser.png") no-repeat center/100%;
+		}
+		.input {
+			display: block;
+			box-sizing: border-box;
+			padding-left: 3.875rem;
+			padding-right: 6.25rem;
+			flex: 0 1 100%;
+			width: 1%;
+			height: $height;
+			min-height: 24px;
+			background-color: #fff;
+			font-size: $fsize;
+			font-weight: normal;
+			color: #333;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			position: relative;
+			&::placeholder {
+				color: #a9b0ba;
+			}
+			.el-input__wrapper {
+				width: 100%;
+				height: 100%;
+				border: 0;
+				box-shadow: none;
+			}
+		}
+
+		.btn {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			right: 0;
+			width: 6.25rem;
+			height: 100%;
+			min-height: 20px;
+			background-color: var(--mainBg-color);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: Comfortaa;
+			font-size: $btnSize;
+			font-weight: 700;
+			line-height: 1.2;
+			color: #fff;
+		}
+	}
+}
+.mt-30 {
+	margin-top: 1.875rem;
+}
+
+.filter_container {
+	&:not(.noOverflow) {
+		.filter_content {
+			min-width: 900px;
+		}
+		@media (max-width: 992px) {
+			scrollbar-width: none;
+			overflow-x: auto;
+		}
+	}
+	.el-col {
+		margin-bottom: 1.875rem;
+	}
+}
+
+.filter_container_with_sort {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1.875rem;
+	.filter_content {
+		display: flex;
+		gap: 0.75rem;
+		.el-col {
+			min-width: 140px;
+		}
+		@media (max-width: 992px) {
+			scrollbar-width: none;
+			overflow-x: auto;
+		}
+	}
+}
+.sort {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.total {
+		display: none;
+		font-size: 1.25rem;
+		color: var(--dgj-color-highlight);
+		@media (max-width: 992px) {
+			display: block;
+		}
+	}
+}
+.sort_sel {
+	position: relative;
+	width: 13.75rem;
+	@media (max-width: 560px) {
+		width: 180px;
+	}
+	.sort_icon {
+		position: absolute;
+		left: 1.25rem;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		z-index: 99;
+	}
+	.el-select__wrapper {
+		padding: 0.75rem 1.25rem;
+		padding-left: 3.25rem;
+		border-radius: 5.625rem;
+		box-shadow: 0 0 0 1px var(--main-color) inset;
+		color: var(--main-color);
+	}
+	.el-select__placeholder {
+		color: var(--main-color);
+	}
+	.el-select__icon {
+		color: var(--main-color);
+	}
+}
+.mt-60 {
+	margin-top: 3.75rem;
+}
+.el-pagination {
+	justify-content: center;
+	flex-wrap: wrap;
+	--el-pagination-font-size: 0.9375rem;
+	--el-pagination-button-width: 1.875rem;
+}
+@media (max-width: 587px) {
+	.el-pagination__jump {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 20px;
+		margin-top: 1.875rem;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+	.el-pagination__total {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.el-cascader-menu {
+		min-width: auto;
+		max-width: 32.3vw;
+	}
+	.filter_container_with_sort {
+		display: flex;
+		align-items: center;
+		gap: 1.875rem;
+		flex-wrap: wrap;
+		.filter_content {
+			display: flex;
+			gap: 0.75rem;
+			.el-col {
+				min-width: 140px;
+			}
+		}
+	}
+}
+.el-cascader-node {
+	padding: 0;
+	padding-right: 0.9375rem;
+	padding-left: 0.9375rem;
+}
+.pointer {
+	cursor: pointer;
+}
+.mb_pagination {
+	margin: 1.875rem auto 0;
+	display: none;
+	@media (max-width: 992px) {
+		display: block;
+	}
+}
+.el-select--large .el-select__wrapper {
+	font-size: var(--fontnormal);
+}
+.el-input__inner {
+	font-size: var(--fontnormal);
+}

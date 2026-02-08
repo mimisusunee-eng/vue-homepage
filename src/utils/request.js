@@ -1,5 +1,30 @@
-import axios from 'axios'
+import axios from "axios";
+import { Encrypt, GenRandomString } from "./common";
 
+const APP_ID = GenRandomString();
+
+export async function Request(url = "", params = {}) {
+  return new Promise((resolve, _reject) => {
+    params.token = "";
+    axios({
+      method: "post",
+      url: import.meta.env.VITE_APP_API_URL + url,
+      data: {
+        form: Encrypt(JSON.stringify(params), APP_ID),
+      },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: APP_ID,
+      },
+    }).then(({ data }) => {
+      resolve(data);
+    })
+  });
+}
+
+
+
+// Cha's old service make this in because prevent the error
 const service = axios.create({
   baseURL: 'https://bighousekeeper.cn',
   timeout: 10000,
@@ -34,3 +59,5 @@ service.interceptors.response.use(
 )
 
 export default service
+
+

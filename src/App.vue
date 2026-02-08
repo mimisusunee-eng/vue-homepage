@@ -11,6 +11,12 @@ import { useRoute } from 'vue-router'
 import MainLayout from './layouts/MainLayout.vue'
 import AuthLayout from './layouts/AuthLayout.vue'
 
+import '@/styles/reset.scss'
+import '@/styles/listCard.scss'
+import '@/styles/detailCommon.scss'
+
+
+
 const route = useRoute()
 
 const layout = computed(() => {

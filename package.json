@@ -12,6 +12,7 @@
     "@vueuse/head": "^2.0.0",
     "axios": "^1.13.4",
     "cors": "^2.8.6",
+    "crypto-js": "^4.2.0",
     "express": "^5.2.1",
     "pinia": "^3.0.4",
     "postcss-pxtorem": "^6.1.0",

@@ -7,7 +7,7 @@ import { GetRentHouseList } from "../services/house";
 
 const list = ref([]);
 
-// ✅ DEFINE CITY (THIS WAS MISSING)
+// DEFINE CITY (THIS WAS MISSING)
 const city = ref(localStorage.webCity ? Number(localStorage.webCity) : 39);
 
 const rentList = ref([]);
@@ -37,8 +37,7 @@ onMounted(async () => {
     console.error("❌ Rent fetch failed:", err);
   }
 
-  const res = await GetRentHouseList(params);
-  rentList.value = res?.data?.house_data || [];
+ 
 });
 
 const newProjects8 = computed(() => list.value.slice(0, 8));
@@ -55,7 +54,7 @@ const rentHouses8 = computed(() => list.value.slice(0, 8));
       title="Handpicked properties"
       :list="handpickedProjects8"
     />
-    <PropertySection title="Rent a house" :list="rentList" />
+    <PropertySection title="Rent a house" :list="rentHouses8" />
 
     <HelpCenter />
   </div>
